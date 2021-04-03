@@ -56,8 +56,8 @@ namespace Torch.Core.Commands
             _stdOut = new StreamWriter(Console.OpenStandardOutput()){AutoFlush = true};
             var notifyingOut = new NotifyingTextWriter(_stdOut);
             Console.SetOut(notifyingOut);
-            notifyingOut.BeforeWrite += HandleAfterWrite;
-            notifyingOut.AfterWrite += HandleBeforeWrite;
+            notifyingOut.BeforeWrite += HandleBeforeWrite;
+            notifyingOut.AfterWrite += HandleAfterWrite;
 
             RewriteUserInput();
             Task.Run(() =>
@@ -128,13 +128,13 @@ namespace Torch.Core.Commands
             }, _cancelTokenSource.Token);
         }
 
-        private void HandleBeforeWrite()
+        private void HandleAfterWrite()
         {
             _consoleWritePosition = (Console.CursorLeft, Console.CursorTop);
             RewriteUserInput();
         }
 
-        private void HandleAfterWrite()
+        private void HandleBeforeWrite()
         {
             ClearUserInput();
             Console.SetCursorPosition(_consoleWritePosition.Left, _consoleWritePosition.Top);
