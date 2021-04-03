@@ -31,6 +31,7 @@ namespace Torch.Core
             UserDataPath = userDataPath;
             GameArgs = gameArgs;
             Services = new ServiceCollection();
+            Services.AddSingleton(this);
             
             Directory.CreateDirectory(userDataPath);
             Directory.CreateDirectory(Path.Combine(userDataPath, "config"));

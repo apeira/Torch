@@ -21,5 +21,9 @@
         public bool IsAllowed(string section, string id, string node);
 
         public bool IsDenied(string section, string id, string node);
+
+        public void SavePermissions();
+
+        public void ReloadPermissions();
     }
 }

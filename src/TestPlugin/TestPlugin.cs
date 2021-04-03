@@ -56,8 +56,9 @@ namespace TestPlugin
             Console.WriteLine("TEST PLUGIN - Constructor");
             commands.RegisterDelegate("ping", ctx => ctx.Respond("pong"));
             
-            permissions.SetDefaultAccess(PermissionModifier.Deny);
-            permissions.GetPermissions("misc", "console").AddExpression(new PermissionExpression("cmd.ping"));
+            permissions.SetDefaultAccess(PermissionModifier.Allow);
+            //permissions.GetPermissions("misc", "console").AddExpression(new PermissionExpression("cmd.ping"));
+            permissions.SavePermissions();
             commands.AddProcessorStep((ctx, next) =>
             {
                 if (ctx.Sender is ConsoleService)
