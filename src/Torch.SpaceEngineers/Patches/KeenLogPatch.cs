@@ -34,7 +34,7 @@ namespace Torch.SpaceEngineers.Patches
 
         [HarmonyPatch(nameof(MyLog.Log), typeof(MyLogSeverity), typeof(string), typeof(object[]))]
         [HarmonyPrefix]
-        private static bool PrefixLogFormatted(MyLog __instance, MyLogSeverity severity, string format, object[] args)
+        private static bool PrefixLogFormatted(MyLog __instance, MyLogSeverity severity, string format, object[]? args)
         {
             // Sometimes this is called with a pre-formatted string and no args
             // and causes a crash when the format string contains braces

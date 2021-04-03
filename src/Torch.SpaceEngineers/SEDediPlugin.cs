@@ -1,4 +1,3 @@
-using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using HarmonyLib;
 using JetBrains.Annotations;
@@ -10,10 +9,10 @@ using Torch.SpaceEngineers.Chat;
 
 namespace Torch.SpaceEngineers
 {
-    [UsedImplicitly]
+    [UsedImplicitly(ImplicitUseTargetFlags.Members)]
+    // ReSharper disable once InconsistentNaming
     public class SEDediPlugin : Plugin
     {
-        [UsedImplicitly]
         public static void Configure(TorchEnvironment config, Harmony patcher)
         {
             config.UserDataPath = Directory.GetParent(typeof(SpaceEngineersGame).Assembly.Location).Parent.FullName;

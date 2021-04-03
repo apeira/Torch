@@ -1,6 +1,5 @@
 using HarmonyLib;
 using Sandbox.Engine.Multiplayer;
-using Torch.SpaceEngineers.Chat;
 using VRage.Network;
 
 namespace Torch.SpaceEngineers.Patches
@@ -11,7 +10,7 @@ namespace Torch.SpaceEngineers.Patches
     [HarmonyPatch("OnChatMessageReceived_Server")]
     internal static class ChatInterceptPatch
     {
-        internal static event ChatMessageDel ChatMessageReceived;
+        internal static event ChatMessageDel? ChatMessageReceived;
 
         public static bool Prefix(ref ChatMsg msg)
         {

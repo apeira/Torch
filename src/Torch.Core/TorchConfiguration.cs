@@ -12,7 +12,7 @@ namespace Torch.Core
         /// <summary>
         /// Gets a list of paths to plugin directories that should be loaded.
         /// </summary>
-        public List<string> Plugins { get; private set; }
+        public List<string> Plugins { get; private set; } = new();
         
         /// <summary>
         /// Gets whether JSON logging should be enabled.

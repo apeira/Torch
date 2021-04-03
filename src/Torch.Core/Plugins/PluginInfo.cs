@@ -11,22 +11,22 @@ namespace Torch.Core.Plugins
         /// <summary>
         /// Gets the plugin's ID.
         /// </summary>
-        public string Id { get; internal set; }
+        public string Id { get; internal set; } = string.Empty;
 
         /// <summary>
         /// Gets the loaded version of the plugin.
         /// </summary>
-        public Version Version { get; internal set; }
+        public Version Version { get; internal set; } = new("0.0.0-uninitialized");
 
         /// <summary>
         /// Gets the name of the DLL file that contains the <see cref="Plugin"/> subclass for this plugin.
         /// </summary>
-        public string EntryPoint { get; internal set; }
+        public string EntryPoint { get; internal set; } = string.Empty;
 
         /// <summary>
         /// Gets the root folder of the plugin.
         /// </summary>
         [YamlIgnore]
-        public string BasePath { get; internal set; }
+        public string BasePath { get; internal set; } = string.Empty;
     }
 }

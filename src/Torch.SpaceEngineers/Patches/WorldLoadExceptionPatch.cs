@@ -2,11 +2,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
 using HarmonyLib;
+using JetBrains.Annotations;
 using Sandbox;
 
 namespace Torch.SpaceEngineers.Patches
 {
     [HarmonyPatch(typeof(MySandboxGame), "InitQuickLaunch")]
+    [UsedImplicitly(ImplicitUseTargetFlags.Members)]
     internal class WorldLoadExceptionPatch
     {
         private static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)

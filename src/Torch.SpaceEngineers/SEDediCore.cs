@@ -5,12 +5,10 @@ using System.Reflection;
 using HarmonyLib;
 using NLog;
 using Sandbox;
-using Sandbox.Engine.Networking;
 using Sandbox.Game;
 using Sandbox.Game.World;
 using SpaceEngineers.Game;
 using Torch.Core;
-using Torch.Core.Commands;
 using VRage;
 using VRage.Dedicated;
 using VRage.Game;
@@ -20,17 +18,17 @@ using VRage.Platform.Windows;
 namespace Torch.SpaceEngineers
 {
     [ExcludeFromCodeCoverage]
+    // ReSharper disable once InconsistentNaming
     public class SEDediCore : ITorchCore
     {
         private static readonly Logger _log = LogManager.GetCurrentClassLogger();
 
         private readonly TorchEnvironment _config;
-        private SpaceEngineersGame _game;
         private CoreState _state;
 
-        public event Action<CoreState> StateChanged;
+        public event Action<CoreState>? StateChanged;
 
-        public SEDediCore(TorchEnvironment config, ICommandService commands)
+        public SEDediCore(TorchEnvironment config)
         {
             AppDomain.CurrentDomain.AssemblyResolve += RedirectComponentModelAnnotations;
 
@@ -50,7 +48,7 @@ namespace Torch.SpaceEngineers
         /// <summary>
         /// Works around Space Engineers requesting an old version of the System.ComponentModel.Annotations library.
         /// </summary>
-        private Assembly RedirectComponentModelAnnotations(object sender, ResolveEventArgs args)
+        private Assembly? RedirectComponentModelAnnotations(object sender, ResolveEventArgs args)
         {
             if (args.Name == "System.ComponentModel.Annotations, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")
                 return Assembly.LoadFrom("System.ComponentModel.Annotations.dll");
@@ -111,10 +109,11 @@ namespace Torch.SpaceEngineers
         }
 
         /// <inheritdoc />
-        public void SignalStop(Action<ITorchCore> callback)
+        public void SignalStop(Action<ITorchCore>? callback)
         {
             _log.Info("Signalling game to stop.");
-            _game.Invoke(
+
+            MySandboxGame.Static.Invoke(
                 () =>
                 {
                     State = CoreState.BeforeStop;
@@ -134,15 +133,6 @@ namespace Torch.SpaceEngineers
         {
             State = CoreState.AfterStart;
             MySession.Static.OnReady -= OnSessionReady;
-        }
-
-        private void AfterRun()
-        {
-            _game.Dispose();
-            _game = null;
-
-            MyGameService.ShutDown();
-            MyInitializer.InvokeAfterRun();
         }
     }
 }

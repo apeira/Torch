@@ -1,15 +1,9 @@
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Runtime.Remoting;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using NLog;
-using PInvoke;
 
 namespace Torch.Core.Commands
 {
@@ -20,11 +14,11 @@ namespace Torch.Core.Commands
     public class ConsoleService
     {
         private static readonly Logger _log = LogManager.GetCurrentClassLogger();
-        private ICommandService _commandService;
+        private ICommandService? _commandService;
         private readonly CancellationTokenSource _cancelTokenSource = new CancellationTokenSource();
         private readonly StringBuilder _currentUserInput = new StringBuilder();
         private (int Left, int Top) _consoleWritePosition;
-        private TextWriter _stdOut;
+        private TextWriter? _stdOut;
         private int _inputCursor;
 
         public ConsoleService(ITorchCore core)
@@ -145,14 +139,14 @@ namespace Torch.Core.Commands
             ClearUserInput();
             var (left, top) = GetUserCursor();
             Console.SetCursorPosition(0, top);
-            _stdOut.Write($"> {_currentUserInput}");
+            _stdOut!.Write($"> {_currentUserInput}");
             Console.SetCursorPosition(left, top);
         }
 
         private void ClearUserInput()
         {
             Console.SetCursorPosition(0, GetUserCursor().Top);
-            _stdOut.Write(new string(' ', Console.BufferWidth - 1));
+            _stdOut!.Write(new string(' ', Console.BufferWidth - 1));
         }
 
         private (int Left, int Top) GetUserCursor()

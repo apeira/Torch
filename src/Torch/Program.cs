@@ -13,7 +13,7 @@ namespace Torch
 {
     internal static class Program
     {
-        private static Logger Log;
+        private static Logger? _log;
         private static readonly PluginService _pluginService = new();
 
         public static void Main(string[] args)
@@ -30,8 +30,8 @@ namespace Torch
             _pluginService.LoadPlugins(environment.Configuration.Plugins, environment);
 
             LogManager.Configuration = environment.Logging;
-            Log = LogManager.GetLogger("Torch");
-            Log.Info("Logging initialized.");
+            _log = LogManager.GetLogger("Torch");
+            _log.Info("Logging initialized.");
 
             var sb = new StringBuilder();
             sb.AppendLine("PATCH SUMMARY:");
@@ -44,12 +44,12 @@ namespace Torch
                 }
             }
 
-            Log.Debug(sb);
+            _log.Debug(sb);
 
             var provider = environment.Services.BuildServiceProvider();
             _pluginService.ActivatePlugins(provider);
 
-            Log.Info("Plugins loaded.");
+            _log.Info("Plugins loaded.");
             var core = provider.GetService<ITorchCore>();
             if (core == null)
                 throw new Exception("No active plugin provided an implementation of ITorchCore.");
@@ -67,7 +67,7 @@ namespace Torch
             sb.AppendLine("----- ERROR START -----");
             LogException(ex, sb, 2);
             sb.AppendLine("----- ERROR END -------");
-            Log.Fatal(sb);
+            _log?.Fatal(sb);
             LogManager.Shutdown();
             Process.GetCurrentProcess().Kill();
         }

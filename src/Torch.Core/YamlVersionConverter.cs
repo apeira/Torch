@@ -15,8 +15,11 @@ namespace Torch.Core
             return new Version(parser.Consume<Scalar>().Value);
         }
 
-        public void WriteYaml(IEmitter emitter, object value, Type type)
+        public void WriteYaml(IEmitter emitter, object? value, Type type)
         {
+            if (value == null)
+                throw new ArgumentNullException(nameof(value));
+
             var str = ((Version)value).ToString();
             emitter.Emit(new Scalar(str));
         }

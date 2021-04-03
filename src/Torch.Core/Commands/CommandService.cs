@@ -10,7 +10,7 @@ namespace Torch.Core.Commands
     public class CommandService : ICommandService
     {
         private const char PREFIX = '.';
-        private readonly IServiceProvider _serviceProvider;
+        private readonly IServiceProvider? _serviceProvider;
         private readonly Dictionary<string, Type> _transientCommands;
         private readonly Dictionary<string, ICommand> _singletonCommands;
         private readonly List<IProcessorStep> _processors;
@@ -20,7 +20,7 @@ namespace Torch.Core.Commands
         /// Initializes a new instance of the <see cref="CommandService"/> class.
         /// </summary>
         /// <param name="serviceProvider">The service provider to use to instantiate commands.</param>
-        public CommandService(IServiceProvider serviceProvider)
+        public CommandService(IServiceProvider? serviceProvider)
         {
             _serviceProvider = serviceProvider;
             _transientCommands = new Dictionary<string, Type>();
@@ -64,7 +64,7 @@ namespace Torch.Core.Commands
         }
 
         /// <inheritdoc/>
-        public bool RegisterDelegate(string commandName, CommandExecuteDel execute, CommandCanExecuteDel canExecute = null)
+        public bool RegisterDelegate(string commandName, CommandExecuteDel execute, CommandCanExecuteDel? canExecute = null)
         {
             if (!ValidateName(commandName))
                 return false;
@@ -147,9 +147,9 @@ namespace Torch.Core.Commands
 
         private class Context : ICommandContext
         {
-            private readonly Action<string> _responseHandler;
+            private readonly Action<string>? _responseHandler;
 
-            public Context(object sender, string commandName, string[] args, Action<string> responseHandler)
+            public Context(object sender, string commandName, string[] args, Action<string>? responseHandler)
             {
                 Sender = sender;
                 CommandName = commandName;

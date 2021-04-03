@@ -1,7 +1,7 @@
 ﻿using Torch.Core.Commands;
 using Xunit;
 
-namespace Torch.Core.Tests.CommandsTests
+namespace Torch.Core.Tests.Commands
 {
     /// <summary>
     /// Tests for <see cref="CommandService"/>.
@@ -14,7 +14,7 @@ namespace Torch.Core.Tests.CommandsTests
         [Fact]
         public void ProcessorsCalledInRightOrder()
         {
-            var commands = new CommandService(null);
+            var commands = new CommandService(null!);
             commands.RegisterDelegate("test", ctx => ctx.Respond("exec"));
             commands.AddProcessorStep((ctx, next) =>
             {
@@ -35,7 +35,7 @@ namespace Torch.Core.Tests.CommandsTests
                 ctx.Respond("4");
             });
             var response = string.Empty;
-            commands.Execute(null, "test", x => response += x);
+            commands.Execute(null!, "test", x => response += x);
             Assert.Equal("123exec456", response);
         }
     }

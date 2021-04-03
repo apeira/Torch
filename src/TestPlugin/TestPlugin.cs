@@ -51,8 +51,6 @@ namespace TestPlugin
         /// Initializes a new instance of the <see cref="TestPlugin"/> class.
         /// The plugin constructor can receive services by dependency injection.
         /// </summary>
-        /// <param name="sampleService">The sample service we added to the service provider in <see cref="Configure"/>.
-        /// </param>
         public TestPlugin(ICommandService commands, IPermissionService permissions)
         {
             Console.WriteLine("TEST PLUGIN - Constructor");

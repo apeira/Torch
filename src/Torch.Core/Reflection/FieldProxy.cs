@@ -27,7 +27,7 @@ namespace Torch.Core.Reflection
         private readonly bool _isStatic;
         private readonly bool _isReadOnly;
 
-        private delegate ref TValue GetByRefDel(object instance);
+        private delegate ref TValue GetByRefDel(object? instance);
 
         /// <summary>
         /// Get or create a shadow accessor for a private field of the given type.
@@ -86,7 +86,7 @@ namespace Torch.Core.Reflection
         /// <param name="instance">An instance of the object containing the field.</param>
         /// <returns>A read-only reference to the instance of the field.</returns>
         /// <exception cref="ArgumentException">The instance parameter has a value when it shouldn't or vice versa.</exception>
-        public ref readonly TValue GetValue(object instance)
+        public ref readonly TValue GetValue(object? instance)
         {
             if (!_isStatic && instance == null)
                 throw new NullReferenceException("Accessing an instance field requires an instance.");
@@ -106,7 +106,7 @@ namespace Torch.Core.Reflection
         /// <param name="instance">An instance of the object containing the field.</param>
         /// <returns>A reference to the instance of the field.</returns>
         /// <exception cref="ArgumentException">The instance parameter has a value when it shouldn't or vice versa.</exception>
-        public ref TValue GetRef(object instance)
+        public ref TValue GetRef(object? instance)
         {
             if (_isReadOnly)
                 throw new InvalidOperationException($"The field is read-only. Use {nameof(GetValue)} instead of ${nameof(GetRef)}.");
@@ -153,14 +153,14 @@ namespace Torch.Core.Reflection
     internal static class DynamicMethodExtensions
     {
         private const BindingFlags BF = BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.DeclaredOnly;
-        private static readonly FieldInfo DynamicMethodReturnType = typeof(DynamicMethod).GetField("m_returnType", BF);
+        private static readonly FieldInfo _dynamicMethodReturnType = typeof(DynamicMethod).GetField("m_returnType", BF);
 
         /// <summary>
         /// Workaround that converts a DynamicMethod that returns T to one that returns ref T.
         /// </summary>
         public static void ConvertToRefReturn(this DynamicMethod m)
         {
-            DynamicMethodReturnType.SetValue(m, m.ReturnType.MakeByRefType());
+            _dynamicMethodReturnType.SetValue(m, m.ReturnType.MakeByRefType());
         }
     }
 }

@@ -6,10 +6,8 @@ using System.Linq;
 using System.Reflection;
 using HarmonyLib;
 using Microsoft.Extensions.DependencyInjection;
-using SemVer;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
-using Version = System.Version;
 
 namespace Torch.Core.Plugins
 {
@@ -66,12 +64,6 @@ namespace Torch.Core.Plugins
 
             _loaded = true;
 
-            if (pluginFolderPaths == null)
-            {
-                Debug.Fail($"{nameof(pluginFolderPaths)} is null");
-                return;
-            }
-            
             foreach (var pluginFolderPath in pluginFolderPaths)
             {
                 var info = GetPluginInfo(pluginFolderPath);

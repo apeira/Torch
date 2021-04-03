@@ -1,7 +1,6 @@
 using NLog;
 using Sandbox.Engine.Multiplayer;
 using Sandbox.Game.Multiplayer;
-using Torch.Core;
 using Torch.Core.Commands;
 using Torch.SpaceEngineers.Patches;
 using Torch.SpaceEngineers.Players;
@@ -16,17 +15,16 @@ namespace Torch.SpaceEngineers.Chat
     public class ChatService
     {
         private const string SERVER_NAME = "Server";
-        private static readonly Color DefaultColor = Color.White;
+        private static readonly Color _defaultColor = Color.White;
 
-        private static readonly Logger Log = LogManager.GetCurrentClassLogger();
-        private static readonly Logger ChatLog = LogManager.GetLogger("Chat");
+        private static readonly Logger _chatLog = LogManager.GetLogger("Chat");
         private ICommandService _commands;
 
-        public event ChatMessageReceivedDel ChatMessageReceived;
+        public event ChatMessageReceivedDel? ChatMessageReceived;
 
         public char CommandPrefix { get; } = '!';
 
-        private ChatService(ICommandService commands = null)
+        private ChatService(ICommandService commands)
         {
             // Hook into chat system
             ChatInterceptPatch.ChatMessageReceived += OnChatMessage;
@@ -35,7 +33,7 @@ namespace Torch.SpaceEngineers.Chat
         }
 
         public void SendMessage(string message)
-            => SendMessageTo(SERVER_NAME, message, DefaultColor, 0);
+            => SendMessageTo(SERVER_NAME, message, _defaultColor, 0);
 
         public void SendMessage(string message, Color color)
             => SendMessageTo(SERVER_NAME, message, color, 0);
@@ -44,7 +42,7 @@ namespace Torch.SpaceEngineers.Chat
             => SendMessageTo(authorName, message, color, 0);
 
         public void SendMessageTo(string message, ulong targetSteamId)
-            => SendMessageTo(SERVER_NAME, message, DefaultColor, targetSteamId);
+            => SendMessageTo(SERVER_NAME, message, _defaultColor, targetSteamId);
 
         public void SendMessageTo(string message, Color color, ulong targetSteamId)
             => SendMessageTo(SERVER_NAME, message, color, targetSteamId);
@@ -80,7 +78,7 @@ namespace Torch.SpaceEngineers.Chat
                 cancel |= e.IsCancelled;
 
                 if (!cancel)
-                    ChatLog.Info($"{e.SenderName}: {e.Content}");
+                    _chatLog.Info($"{e.SenderName}: {e.Content}");
             }
         }
     }

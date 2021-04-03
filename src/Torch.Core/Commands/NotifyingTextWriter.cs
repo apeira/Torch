@@ -13,9 +13,9 @@ namespace Torch.Core.Commands
     {
         private readonly TextWriter _writer;
 
-        public event Action BeforeWrite;
+        public event Action? BeforeWrite;
 
-        public event Action AfterWrite;
+        public event Action? AfterWrite;
 
         public NotifyingTextWriter(TextWriter writer)
         {

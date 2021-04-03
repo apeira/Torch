@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
-using NLog;
 
 namespace Torch.Core.Reflection
 {
     public class MethodProxy
     {
-        private static readonly Logger Log = LogManager.GetCurrentClassLogger();
         public static TDel Create<TDel>(string methodName) where TDel : Delegate
         {
             return Create<TDel>(GetInvoker<TDel>().GetParameters()[0].ParameterType, methodName);
@@ -25,7 +23,7 @@ namespace Torch.Core.Reflection
             return Create<TDel>(ownerType, methodName);
         }
 
-        public static TDel Create<TDel>(Type ownerTypeOverride, string methodName) where TDel : Delegate
+        public static TDel Create<TDel>(Type? ownerTypeOverride, string methodName) where TDel : Delegate
         {
             var delMethod = GetInvoker<TDel>();
             var delParams = delMethod.GetParameters();

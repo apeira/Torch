@@ -10,7 +10,7 @@ namespace TestPlugin
     {
         private static readonly Logger _log = LogManager.GetCurrentClassLogger();
         private readonly ManualResetEvent _mre = new ManualResetEvent(false);
-        public event Action<CoreState> StateChanged;
+        public event Action<CoreState>? StateChanged;
 
         private CoreState _state;
 
@@ -32,7 +32,7 @@ namespace TestPlugin
             _mre.WaitOne();
         }
 
-        public void SignalStop(Action<ITorchCore> callback = null)
+        public void SignalStop(Action<ITorchCore>? callback = null)
         {
             _log.Info(GetType().FullDescription() + "::" + nameof(SignalStop));
             _mre.Set();

@@ -19,7 +19,7 @@ namespace Torch.Core
         /// <summary>
         /// Signal the core to complete execution and stop.
         /// </summary>
-        void SignalStop(Action<ITorchCore> callback = null);
+        void SignalStop(Action<ITorchCore>? callback = null);
     }
 
     public enum CoreState

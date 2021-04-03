@@ -4,10 +4,8 @@ using System.Text;
 using Microsoft.Extensions.DependencyInjection;
 using NLog;
 using NLog.Config;
-using NLog.Fluent;
 using NLog.Layouts;
 using NLog.Targets;
-using Torch.Core.Commands;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
 

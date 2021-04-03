@@ -43,7 +43,7 @@ namespace Torch.Core.Commands
         /// <param name="execute">The delegate that handles executing the command.</param>
         /// <param name="canExecute">The delegate that checks if the command can be executed.</param>
         /// <returns>True if the command was registered, false if the name is already in use.</returns>
-        public bool RegisterDelegate(string commandName, CommandExecuteDel execute, CommandCanExecuteDel canExecute = null);
+        public bool RegisterDelegate(string commandName, CommandExecuteDel execute, CommandCanExecuteDel? canExecute = null);
 
         /// <summary>
         /// Appends a preprocessor to the end of the command handler pipeline.

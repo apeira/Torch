@@ -3,8 +3,17 @@ using Xunit;
 
 namespace Torch.Core.Tests.Permissions
 {
+    /// <summary>
+    /// Tests the evaluation of permission nodes using <see cref="PermissionExpression"/>.
+    /// </summary>
     public class PermissionExpressionTests
     {
+        /// <summary>
+        /// Tests expressions without wildcards.
+        /// </summary>
+        /// <param name="expression">The permission expression.</param>
+        /// <param name="node">The permission node to compare.</param>
+        /// <param name="expected">The expected result of the evaluation.</param>
         [Theory]
         [InlineData("test",         "test",            PermissionModifier.Allow)]
         [InlineData("test",         "nottest",         PermissionModifier.Default)]
@@ -23,6 +32,12 @@ namespace Torch.Core.Tests.Permissions
             Test(expression, node, expected);
         }
 
+        /// <summary>
+        /// Tests expressions with trailing wildcards.
+        /// </summary>
+        /// <param name="expression">The permission expression.</param>
+        /// <param name="node">The permission node to compare.</param>
+        /// <param name="expected">The expected result of the evaluation.</param>
         [Theory]
         [InlineData("test.*",       "test",            PermissionModifier.Allow)]
         [InlineData("test.*",       "test.perm",       PermissionModifier.Allow)]
@@ -39,6 +54,12 @@ namespace Torch.Core.Tests.Permissions
             Test(expression, node, expected);
         }
 
+        /// <summary>
+        /// Tests expressions with wildcards in the middle.
+        /// </summary>
+        /// <param name="expression">The permission expression.</param>
+        /// <param name="node">The permission node to compare.</param>
+        /// <param name="expected">The expected result of the evaluation.</param>
         [Theory]
         [InlineData("test.*.perm",  "test",            PermissionModifier.Default)]
         [InlineData("test.*.perm",  "test.blah.perm",  PermissionModifier.Allow)]
@@ -53,6 +74,7 @@ namespace Torch.Core.Tests.Permissions
             Test(expression, node, expected);
         }
 
+        // ReSharper disable once ParameterOnlyUsedForPreconditionCheck.Local
         private void Test(string expression, string node, PermissionModifier expected)
         {
             Assert.Equal(expected, new PermissionExpression(expression).Evaluate(node.Split('.')));
