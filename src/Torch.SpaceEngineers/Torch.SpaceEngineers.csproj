@@ -33,6 +33,7 @@
         </Reference>
         <Reference Include="GameAnalytics.Mono, Version=1.0.6997.21819, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\..\3rd\SpaceEngineersDedicated\DedicatedServer64\GameAnalytics.Mono.dll</HintPath>
+          <Private>False</Private>
         </Reference>
         <Reference Include="JetBrains.Annotations, Version=2020.3.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325">
           <HintPath>..\..\..\..\..\.nuget\packages\jetbrains.annotations\2020.3.0\lib\netstandard2.0\JetBrains.Annotations.dll</HintPath>
@@ -46,7 +47,7 @@
         </Reference>
         <Reference Include="mscorlib" />
         <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c">
-          <HintPath>..\..\bin\Debug\NLog.dll</HintPath>
+          <HintPath>..\..\..\..\..\.nuget\packages\nlog\4.7.9\lib\netstandard2.0\NLog.dll</HintPath>
         </Reference>
         <Reference Include="Sandbox.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\..\3rd\SpaceEngineersDedicated\DedicatedServer64\Sandbox.Common.dll</HintPath>
@@ -74,10 +75,12 @@
         </Reference>
         <Reference Include="SpaceEngineersDedicated, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\..\3rd\SpaceEngineersDedicated\DedicatedServer64\SpaceEngineersDedicated.exe</HintPath>
+          <Private>False</Private>
         </Reference>
         <Reference Include="System" />
         <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
           <HintPath>..\..\3rd\SpaceEngineersDedicated\DedicatedServer64\System.ComponentModel.Annotations.dll</HintPath>
+          <Private>False</Private>
         </Reference>
         <Reference Include="System.Configuration" />
         <Reference Include="System.Core" />
@@ -102,6 +105,7 @@
         </Reference>
         <Reference Include="VRage.Dedicated, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\..\3rd\SpaceEngineersDedicated\DedicatedServer64\VRage.Dedicated.dll</HintPath>
+          <Private>False</Private>
         </Reference>
         <Reference Include="VRage.Game, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\..\3rd\SpaceEngineersDedicated\DedicatedServer64\VRage.Game.dll</HintPath>

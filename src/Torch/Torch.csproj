@@ -46,7 +46,7 @@
         </Reference>
         <Reference Include="mscorlib" />
         <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c">
-          <HintPath>..\..\bin\Debug\NLog.dll</HintPath>
+          <HintPath>..\..\..\..\..\.nuget\packages\nlog\4.7.9\lib\netstandard2.0\NLog.dll</HintPath>
         </Reference>
         <Reference Include="System" />
         <Reference Include="System.Configuration" />

@@ -36,20 +36,25 @@
     <ItemGroup>
         <Reference Include="0Harmony, Version=2.0.4.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\..\..\..\..\.nuget\packages\lib.harmony\2.0.4\lib\net48\0Harmony.dll</HintPath>
+          <Private>False</Private>
         </Reference>
         <Reference Include="JetBrains.Annotations, Version=2020.3.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325">
           <HintPath>..\..\..\..\..\.nuget\packages\jetbrains.annotations\2020.3.0\lib\netstandard2.0\JetBrains.Annotations.dll</HintPath>
+          <Private>False</Private>
         </Reference>
         <Reference Include="Microsoft.CSharp" />
         <Reference Include="Microsoft.Extensions.DependencyInjection, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
           <HintPath>..\..\3rd\SpaceEngineersDedicated\DedicatedServer64\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+          <Private>False</Private>
         </Reference>
         <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
           <HintPath>..\..\..\..\..\.nuget\packages\microsoft.extensions.dependencyinjection.abstractions\5.0.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+          <Private>False</Private>
         </Reference>
         <Reference Include="mscorlib" />
         <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c">
           <HintPath>..\..\3rd\SpaceEngineersDedicated\DedicatedServer64\NLog.dll</HintPath>
+          <Private>False</Private>
         </Reference>
         <Reference Include="System" />
         <Reference Include="System.Configuration" />
