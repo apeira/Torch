@@ -14,6 +14,9 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) to learn about the ways you can contribut
   in the future.
 * Run the Torch project in Debug mode to automatically load the supplied testing plugin.
 
+# Documentation
+Documentation can be found on the `docs` branch or viewed at https://apeira.github.io/Torch.
+
 ## Overview
 | Project              | Summary
 | :---                 | :---
