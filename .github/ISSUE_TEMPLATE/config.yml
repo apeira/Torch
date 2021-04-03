@@ -1,7 +1,7 @@
 blank_issues_enabled: false
 contact_links:
   - name: Apeira Discord Server
-    url: https://discord.gg/cHQbhZSn2w
+    url: http://discord.apeira.net
     about: Get quick community help here.
   - name: Discussions
     url: https://github.com/apeira/Torch/discussions
