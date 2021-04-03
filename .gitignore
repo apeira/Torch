@@ -1,0 +1,7 @@
+.idea/
+3rd/
+packages/
+bin/
+obj/
+docs/
+*DotSettings*

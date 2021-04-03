@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{48D74A30-242D-4EA6-BEF5-01BAC6E3A5DA}</ProjectGuid>
+        <OutputType>Library</OutputType>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <RootNamespace>Torch.SpaceEngineers</RootNamespace>
+        <AssemblyName>Torch.SpaceEngineers</AssemblyName>
+        <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+        <LangVersion>latest</LangVersion>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+      <OutputPath>$(SolutionDir)bin\Release\</OutputPath>
+      <PlatformTarget>x64</PlatformTarget>
+      <Optimize>true</Optimize>
+      <DebugType>pdbonly</DebugType>
+      <DebugSymbols>true</DebugSymbols>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+      <OutputPath>$(SolutionDir)bin\Debug\</OutputPath>
+      <PlatformTarget>x64</PlatformTarget>
+      <DebugType>full</DebugType>
+      <DebugSymbols>true</DebugSymbols>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="0Harmony, Version=2.0.4.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\..\..\..\.nuget\packages\lib.harmony\2.0.4\lib\net48\0Harmony.dll</HintPath>
+        </Reference>
+        <Reference Include="GameAnalytics.Mono, Version=1.0.6997.21819, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\3rd\SpaceEngineersDedicated\DedicatedServer64\GameAnalytics.Mono.dll</HintPath>
+        </Reference>
+        <Reference Include="JetBrains.Annotations, Version=2020.3.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325">
+          <HintPath>..\..\..\..\..\.nuget\packages\jetbrains.annotations\2020.3.0\lib\netstandard2.0\JetBrains.Annotations.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.CSharp" />
+        <Reference Include="Microsoft.Extensions.DependencyInjection, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
+          <HintPath>..\..\3rd\SpaceEngineersDedicated\DedicatedServer64\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
+          <HintPath>..\..\..\..\..\.nuget\packages\microsoft.extensions.dependencyinjection.abstractions\5.0.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+        </Reference>
+        <Reference Include="mscorlib" />
+        <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c">
+          <HintPath>..\..\bin\Debug\NLog.dll</HintPath>
+        </Reference>
+        <Reference Include="Sandbox.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\3rd\SpaceEngineersDedicated\DedicatedServer64\Sandbox.Common.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Sandbox.Game, Version=0.1.1.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\3rd\SpaceEngineersDedicated\DedicatedServer64\Sandbox.Game.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Sandbox.Graphics, Version=0.1.1.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\3rd\SpaceEngineersDedicated\DedicatedServer64\Sandbox.Graphics.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Sandbox.RenderDirect, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\3rd\SpaceEngineersDedicated\DedicatedServer64\Sandbox.RenderDirect.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="SpaceEngineers.Game, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\3rd\SpaceEngineersDedicated\DedicatedServer64\SpaceEngineers.Game.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="SpaceEngineers.ObjectBuilders, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\3rd\SpaceEngineersDedicated\DedicatedServer64\SpaceEngineers.ObjectBuilders.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="SpaceEngineersDedicated, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\3rd\SpaceEngineersDedicated\DedicatedServer64\SpaceEngineersDedicated.exe</HintPath>
+        </Reference>
+        <Reference Include="System" />
+        <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+          <HintPath>..\..\3rd\SpaceEngineersDedicated\DedicatedServer64\System.ComponentModel.Annotations.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Configuration" />
+        <Reference Include="System.Core" />
+        <Reference Include="System.Data" />
+        <Reference Include="System.IO.Compression" />
+        <Reference Include="System.Runtime.InteropServices.RuntimeInformation" />
+        <Reference Include="System.Runtime.Serialization" />
+        <Reference Include="System.ServiceModel" />
+        <Reference Include="System.Transactions" />
+        <Reference Include="System.Xml" />
+        <Reference Include="VRage, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\3rd\SpaceEngineersDedicated\DedicatedServer64\VRage.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="VRage.Ansel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\3rd\SpaceEngineersDedicated\DedicatedServer64\VRage.Ansel.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="VRage.Audio, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\3rd\SpaceEngineersDedicated\DedicatedServer64\VRage.Audio.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="VRage.Dedicated, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\3rd\SpaceEngineersDedicated\DedicatedServer64\VRage.Dedicated.dll</HintPath>
+        </Reference>
+        <Reference Include="VRage.Game, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\3rd\SpaceEngineersDedicated\DedicatedServer64\VRage.Game.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="VRage.Input, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\3rd\SpaceEngineersDedicated\DedicatedServer64\VRage.Input.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="VRage.Library, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\3rd\SpaceEngineersDedicated\DedicatedServer64\VRage.Library.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="VRage.Math, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\3rd\SpaceEngineersDedicated\DedicatedServer64\VRage.Math.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="VRage.Platform.Windows, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\3rd\SpaceEngineersDedicated\DedicatedServer64\VRage.Platform.Windows.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="VRage.Render, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\3rd\SpaceEngineersDedicated\DedicatedServer64\VRage.Render.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="VRage.Steam, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\3rd\SpaceEngineersDedicated\DedicatedServer64\VRage.Steam.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="ChatMessageEvent.cs" />
+        <Compile Include="Chat\ChatService.cs" />
+        <Compile Include="MySteamServiceWrapper.cs" />
+        <Compile Include="Patches\ChatInterceptPatch.cs" />
+        <Compile Include="Patches\GALoggerConstructorPatch.cs" />
+        <Compile Include="Patches\KeenLogPatch.cs" />
+        <Compile Include="Patches\WorldLoadExceptionPatch.cs" />
+        <Compile Include="Players\IPlayerExtensions.cs" />
+        <Compile Include="Players\Player.cs" />
+        <Compile Include="SEDediCore.cs" />
+        <Compile Include="SEDediPlugin.cs" />
+        <Compile Include="Properties\AssemblyInfo.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\Torch.Core\Torch.Core.csproj">
+        <Project>{cb478df4-7396-4a26-b305-63cb2a65a0de}</Project>
+        <Name>Torch.Core</Name>
+      </ProjectReference>
+    </ItemGroup>
+    <ItemGroup>
+      <Content Include="info.json" />
+    </ItemGroup>
+    <ItemGroup>
+      <PackageReference Include="Apeira.StyleCop" Version="1.1.0" />
+      <PackageReference Include="JetBrains.Annotations" Version="2020.3.0" />
+      <PackageReference Include="Lib.Harmony" Version="2.0.4" />
+      <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="5.0.0" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
+      <PackageReference Include="NLog" Version="4.7.9" />
+      <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+      <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="5.0.0" />
+      <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.4" />
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+
+</Project>

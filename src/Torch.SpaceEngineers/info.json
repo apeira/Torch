@@ -1,0 +1,8 @@
+{
+  "name": "spaceengineersdedicated",
+  "version": "v0.0.1",
+  "install": [
+    "steamapp 298740"
+  ],
+  "bindir": "DedicatedServer64"
+}
