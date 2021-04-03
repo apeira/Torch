@@ -1,104 +1,31 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  
     <PropertyGroup>
-        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-        <ProjectGuid>{9F441BFA-1E8C-4995-88FB-A78ED252E1F9}</ProjectGuid>
-        <OutputType>Exe</OutputType>
-        <AppDesignerFolder>Properties</AppDesignerFolder>
-        <RootNamespace>Torch</RootNamespace>
-        <AssemblyName>Torch</AssemblyName>
-        <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-        <FileAlignment>512</FileAlignment>
-        <LangVersion>latest</LangVersion>
+        <TargetFramework>net48</TargetFramework>
+        <IsPackable>false</IsPackable>
+        <Configurations>Release;Debug</Configurations>
+        <Platforms>x64</Platforms>
+        <LangVersion>default</LangVersion>
         <Nullable>enable</Nullable>
+        <OutputType>Exe</OutputType>
+    </PropertyGroup>
+  
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+      <OutputPath>$(SolutionDir)bin\x64\Debug\</OutputPath>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
-      <OutputPath>$(SolutionDir)bin\Release\</OutputPath>
-      <PlatformTarget>x64</PlatformTarget>
-      <Optimize>true</Optimize>
-      <Prefer32bit>false</Prefer32bit>
-      <DebugSymbols>true</DebugSymbols>
-      <DebugType>pdbonly</DebugType>
+      <OutputPath>$(SolutionDir)bin\x64\Release\</OutputPath>
     </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
-      <OutputPath>$(SolutionDir)bin\Debug\</OutputPath>
-      <PlatformTarget>x64</PlatformTarget>
-      <Prefer32bit>false</Prefer32bit>
-      <DebugType>full</DebugType>
-      <DebugSymbols>true</DebugSymbols>
-      <DefineConstants>DEBUG</DefineConstants>
-    </PropertyGroup>
+
     <ItemGroup>
-        <Reference Include="0Harmony, Version=2.0.4.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\..\..\..\..\.nuget\packages\lib.harmony\2.0.4\lib\net48\0Harmony.dll</HintPath>
-        </Reference>
-        <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
-          <HintPath>..\..\3rd\SpaceEngineersDedicated\DedicatedServer64\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
-        </Reference>
-        <Reference Include="Microsoft.CSharp" />
-        <Reference Include="Microsoft.Extensions.DependencyInjection, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
-          <HintPath>..\..\3rd\SpaceEngineersDedicated\DedicatedServer64\Microsoft.Extensions.DependencyInjection.dll</HintPath>
-        </Reference>
-        <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
-          <HintPath>..\..\..\..\..\.nuget\packages\microsoft.extensions.dependencyinjection.abstractions\5.0.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
-        </Reference>
-        <Reference Include="mscorlib" />
-        <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c">
-          <HintPath>..\..\..\..\..\.nuget\packages\nlog\4.7.9\lib\netstandard2.0\NLog.dll</HintPath>
-        </Reference>
-        <Reference Include="System" />
-        <Reference Include="System.Configuration" />
-        <Reference Include="System.Core" />
-        <Reference Include="System.Data" />
-        <Reference Include="System.IO.Compression" />
-        <Reference Include="System.Runtime.InteropServices.RuntimeInformation" />
-        <Reference Include="System.Runtime.Serialization" />
-        <Reference Include="System.ServiceModel" />
-        <Reference Include="System.Transactions" />
-        <Reference Include="System.Xml" />
-        <Reference Include="YamlDotNet, Version=9.0.0.0, Culture=neutral, PublicKeyToken=ec19458f3c15af5e">
-          <HintPath>..\..\3rd\SpaceEngineersDedicated\DedicatedServer64\YamlDotNet.dll</HintPath>
-        </Reference>
+      <ProjectReference Include="..\TestPlugin\TestPlugin.csproj" />
+      <ProjectReference Include="..\Torch.Core\Torch.Core.csproj" />
     </ItemGroup>
+
     <ItemGroup>
-        <Compile Include="Program.cs" />
-        <Compile Include="Properties\AssemblyInfo.cs" />
-    </ItemGroup>
-    <ItemGroup>
-      <ProjectReference Include="..\TestPlugin\TestPlugin.csproj">
-        <Project>{dafd25f0-8658-4869-a771-a96ead780a8f}</Project>
-        <Name>TestPlugin</Name>
-      </ProjectReference>
-      <ProjectReference Include="..\Torch.Core\Torch.Core.csproj">
-        <Project>{cb478df4-7396-4a26-b305-63cb2a65a0de}</Project>
-        <Name>Torch.Core</Name>
-      </ProjectReference>
-    </ItemGroup>
-    <ItemGroup>
-      <PackageReference Include="Apeira.StyleCop" Version="1.1.0" />
+      <PackageReference Include="HarmonyX" Version="2.4.0" />
       <PackageReference Include="JetBrains.Annotations" Version="2020.3.0" />
-      <PackageReference Include="Lib.Harmony" Version="2.0.4" />
-      <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="5.0.0" />
-      <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
-      <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
       <PackageReference Include="NLog" Version="4.7.9" />
-      <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
-        <PrivateAssets>all</PrivateAssets>
-        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      </PackageReference>
-      <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="5.0.0" />
-      <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.4" />
-      <PackageReference Include="YamlDotNet" Version="11.0.1" />
     </ItemGroup>
-    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-         Other similar extension points exist, see Microsoft.Common.targets.
-    <Target Name="BeforeBuild">
-    </Target>
-    <Target Name="AfterBuild">
-    </Target>
-    -->
 
 </Project>
