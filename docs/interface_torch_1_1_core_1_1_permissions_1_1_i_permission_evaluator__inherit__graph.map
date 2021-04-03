@@ -1,0 +1,6 @@
+<map id="Torch.Core.Permissions.IPermissionEvaluator" name="Torch.Core.Permissions.IPermissionEvaluator">
+<area shape="rect" id="node1" title="An object capable of controlling access to a permission node." alt="" coords="5,39,239,80"/>
+<area shape="rect" id="node2" href="$interface_torch_1_1_core_1_1_permissions_1_1_i_permission_collection.html" title="A collection of PermissionExpressions and nested IPermissionCollections that can be evaluated as a si..." alt="" coords="287,5,520,47"/>
+<area shape="rect" id="node4" href="$class_torch_1_1_core_1_1_permissions_1_1_permission_expression.html" title=" " alt="" coords="288,71,519,112"/>
+<area shape="rect" id="node3" href="$class_torch_1_1_core_1_1_permissions_1_1_permission_collection.html" title=" " alt="" coords="568,5,799,47"/>
+</map>

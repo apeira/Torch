@@ -1,0 +1,5 @@
+<map id="Torch.Core.Permissions.PermissionService.IsAllowed" name="Torch.Core.Permissions.PermissionService.IsAllowed">
+<area shape="rect" id="node1" title=" " alt="" coords="5,39,236,80"/>
+<area shape="rect" id="node2" href="$interface_torch_1_1_core_1_1_permissions_1_1_i_permission_evaluator.html#a091c43b80964d483e3209e573ff42eef" title="Evaluates the permission node against this evaluator." alt="" coords="284,5,517,47"/>
+<area shape="rect" id="node3" href="$class_torch_1_1_core_1_1_permissions_1_1_permission_service.html#a2bb6090b6ddd9ccccc50e9491a7fe60e" title="Get the IPermissionCollection associated with the ID in the given section." alt="" coords="285,71,516,112"/>
+</map>

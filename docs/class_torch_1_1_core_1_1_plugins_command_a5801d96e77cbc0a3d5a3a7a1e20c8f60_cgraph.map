@@ -1,0 +1,4 @@
+<map id="Torch.Core.PluginsCommand.Execute" name="Torch.Core.PluginsCommand.Execute">
+<area shape="rect" id="node1" title="Executes the command with the given command context. This should only be called if CanExecute returns..." alt="" coords="5,5,200,47"/>
+<area shape="rect" id="node2" href="$interface_torch_1_1_core_1_1_commands_1_1_i_command_context.html#ae6255527f2a7127fde2a94cd1718d0d5" title=" " alt="" coords="248,5,469,47"/>
+</map>
