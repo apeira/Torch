@@ -1,5 +1,8 @@
 Welcome! There are many ways to contribute to this project and not all of them require programming knowledge.
 
+## Participate in the community
+Join the [Apeira Discord server](https://discord.gg/MfsXNkrJh9) to chat with contributors and users alike.
+
 ## Write and update documentation
 Torch is complex software with a lot of possible configurations. Share your expertise by contributing to the [Wiki](https://github.com/apeira/Torch/wiki)
 or answering questions in [Discussions](https://github.com/apeira/Torch/discussions)!
