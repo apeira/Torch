@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using YamlDotNet.RepresentationModel;
+using YamlDotNet.Serialization;
+using YamlDotNet.Serialization.NamingConventions;
 
 namespace Torch.Core.Permissions
 {
@@ -10,11 +10,15 @@ namespace Torch.Core.Permissions
     {
         private readonly Dictionary<string, Dictionary<string, PermissionCollection>> _sections = new();
         private readonly Dictionary<string, PermissionModifier> _defaults = new();
+        private readonly string _configFilePath;
+        private readonly ISerializer _serializer;
+        private readonly IDeserializer _deserializer;
         private PermissionModifier _default = PermissionModifier.Deny;
-        private string _configFilePath;
 
         public PermissionService(TorchEnvironment env)
         {
+            _serializer = new SerializerBuilder().WithNamingConvention(CamelCaseNamingConvention.Instance).Build();
+            _deserializer = new DeserializerBuilder().WithNamingConvention(CamelCaseNamingConvention.Instance).Build();
             _configFilePath = Path.Combine(env.UserDataPath, "config", "permissions.yaml");
             Load(_configFilePath);
         }
@@ -98,85 +102,42 @@ namespace Torch.Core.Permissions
             
             _sections.Clear();
             
-            // Need to resolve inheritance after all collections are created.
-            var inheritsMap = new Dictionary<string, List<string>>();
-            
             using var f = File.OpenRead(configFilePath);
             using var sr = new StreamReader(f);
-            var yaml = new YamlStream();
-            yaml.Load(sr);
-            var root = (YamlMappingNode)yaml.Documents[0].RootNode;
+            var data = _deserializer.Deserialize<Dictionary<string, Dictionary<string, SerializablePermissionCollection>>>(sr);
 
-            foreach (var node in root.Children)
+            foreach (var kv in data)
             {
-                var section = ((YamlScalarNode)node.Key).Value;
-
-                foreach (var collection in (YamlMappingNode)node.Value)
+                foreach (var kv2 in kv.Value)
                 {
-                    var key = ((YamlScalarNode)collection.Key).Value;
-                    var value = (YamlMappingNode)collection.Value;
-                    var obj = GetPermissions(section, key);
+                    var collection = GetPermissions(kv.Key, kv2.Key);
+                    foreach (var permission in kv2.Value.Permissions)
+                        collection.AddExpression(new PermissionExpression(permission));
 
-                    foreach (var permission in (YamlSequenceNode)value["permissions"])
+                    foreach (var inherits in kv2.Value.Inherits)
                     {
-                        var val = ((YamlScalarNode)permission).Value;
-                        obj.AddExpression(new PermissionExpression(val));
+                        var sectionAndKey = inherits.Split('.');
+                        collection.AddInherits(GetPermissions(sectionAndKey[0], sectionAndKey[1]));
                     }
-
-                    var inheritsList = inheritsMap[$"{section}.{key}"] = new List<string>();
-                    foreach (var inherits in (YamlSequenceNode)value["inherits"])
-                    {
-                        inheritsList.Add(((YamlScalarNode)inherits).Value);
-                    }
-                }
-            }
-
-            foreach (var pair in inheritsMap)
-            {
-                var split1 = pair.Key.Split('.');
-                var collection = GetPermissions(split1[0], split1[1]);
-
-                foreach (var inherit in pair.Value)
-                {
-                    var split2 = inherit.Split('.');
-                    collection.AddInherits(GetPermissions(split2[0], split2[1]));
                 }
             }
         }
 
         private void Save(string configFilePath)
         {
-            var fullMap = new YamlMappingNode();
+            var serializablePermissions =
+                new Dictionary<string, Dictionary<string, SerializablePermissionCollection>>();
 
-            foreach (var section in _sections)
+            foreach (var kv in _sections)
             {
-                var sectionMap = new YamlMappingNode();
-
-                foreach (var collection in section.Value.Values)
-                {
-                    var collectionMap = new YamlMappingNode
-                    {
-                        {
-                            "permissions", 
-                            new YamlSequenceNode(collection.Expressions.Select(x =>
-                                new YamlScalarNode(x.ToString())))
-                        },
-                        {
-                            "inherits", 
-                            new YamlSequenceNode(collection.Inherits.Select(x =>
-                                new YamlScalarNode($"{x.Section}.{x.Id}")))
-                        }
-                    };
-                    
-                    sectionMap.Add(collection.Id, collectionMap);
-                }
-                
-                fullMap.Add(section.Key, sectionMap);
+                var section = serializablePermissions[kv.Key] = new();
+                foreach (var collection in _sections[kv.Key])
+                    section[collection.Key] = new SerializablePermissionCollection(collection.Value);
             }
 
             using var f = File.Create(configFilePath);
             using var sw = new StreamWriter(f);
-            new YamlStream(new YamlDocument(fullMap)).Save(sw);
+            _serializer.Serialize(sw, serializablePermissions);
         }
     }
 }

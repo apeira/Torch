@@ -40,6 +40,10 @@ namespace Torch.Core.Permissions
         
         public bool AddInherits(IPermissionCollection collection)
         {
+            if (WouldCauseCircularInheritance(collection))
+                throw new InvalidOperationException(
+                    "Adding this collection would result in a circular inheritance graph.");
+            
             if (_inherits.Any(x => x.Section == collection.Section && x.Id == collection.Id))
                 return false;
 
@@ -61,6 +65,20 @@ namespace Torch.Core.Permissions
             return modifier;
         }
 
+        public bool WouldCauseCircularInheritance(IPermissionCollection collection)
+        {
+            if (collection.Inherits.Any(x => Section == x.Section && Id == x.Id))
+                return true;
+
+            foreach (var inherit in _inherits)
+            {
+                if (inherit.WouldCauseCircularInheritance(collection))
+                    return true;
+            }
+            
+            return false;
+        }
+        
         private static PermissionModifier CheckCollection(IEnumerable<IPermissionEvaluator> evaluators, PermissionModifier current, params string[] node)
         {
             var modifier = current;

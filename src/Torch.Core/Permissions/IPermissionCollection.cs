@@ -35,5 +35,12 @@ namespace Torch.Core.Permissions
         bool AddInherits(IPermissionCollection collection);
 
         bool RemoveInherits(IPermissionCollection collection);
+
+        /// <summary>
+        /// Returns true if inheriting the given collection would cause a circular inheritance graph.
+        /// </summary>
+        /// <param name="collection"></param>
+        /// <returns></returns>
+        bool WouldCauseCircularInheritance(IPermissionCollection collection);
     }
 }
