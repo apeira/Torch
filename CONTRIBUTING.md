@@ -14,7 +14,7 @@ the [Bug Report](https://github.com/apeira/Torch/issues/new?assignees=&labels=bu
 If you have an idea for a feature that would make Torch better, you can suggest it by creating a [Feature Request](https://github.com/apeira/Torch/issues/new?assignees=&labels=suggestion&template=feature_request.md).
 
 ## Contribute code
-There is always something to add or improve in Torch. Check out the open [issues](https://github.com/apeira/Torch/discussions) or come up with
+There is always something to add or improve in Torch. Check out the open [issues](https://github.com/apeira/Torch/issues) or come up with
 your own ideas!
 
 ### Code Contribution Guidelines
