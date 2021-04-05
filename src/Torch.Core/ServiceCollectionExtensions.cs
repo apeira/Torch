@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Torch.Core.Commands;
+using Torch.Core.Commands.Common;
 using Torch.Core.Permissions;
 
 namespace Torch.Core

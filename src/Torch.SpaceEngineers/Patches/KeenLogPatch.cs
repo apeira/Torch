@@ -24,6 +24,23 @@ namespace Torch.SpaceEngineers.Patches
         private static readonly Func<MyLog, int> _getThreadId = MethodProxy.Create<Func<MyLog, int>>("GetThreadId");
         private static readonly Func<MyLog, int, int> _getIndentByThread = MethodProxy.Create<Func<MyLog, int, int>>("GetIdentByThread");
 
+        /// <summary>
+        /// Prevents MyLog from creating its own log files because with this patch they're never written to.
+        /// </summary>
+        /// <param name="__instance"></param>
+        /// <param name="logFileName"></param>
+        /// <param name="appVersionString"></param>
+        /// <returns></returns>
+        [HarmonyPatch(nameof(MyLog.Init))]
+        [HarmonyPrefix]
+        private static bool PrefixInit(MyLog __instance, string logFileName, StringBuilder appVersionString)
+        {
+            __instance.WriteLine("Log Started");
+            __instance.WriteLine($"Timezone (local - UTC): {Math.Round((DateTime.Now - DateTime.UtcNow).TotalHours)}h");
+            __instance.WriteLineAndConsole("App Version: " + appVersionString);
+            return false;
+        }
+        
         [HarmonyPatch(nameof(MyLog.Log), typeof(MyLogSeverity), typeof(StringBuilder))]
         [HarmonyPrefix]
         private static bool PrefixLogStringBuilder(MyLog __instance, MyLogSeverity severity, StringBuilder builder)

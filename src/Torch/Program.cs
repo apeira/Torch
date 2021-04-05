@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 using System.Text;
+using CommandLine;
 using HarmonyLib;
 using Microsoft.Extensions.DependencyInjection;
 using NLog;
@@ -11,22 +12,43 @@ using Torch.Core.Plugins;
 
 namespace Torch
 {
+    /// <summary>
+    /// Contains the entry point for Torch.
+    /// </summary>
     internal static class Program
     {
-        private static Logger? _log;
         private static readonly PluginService _pluginService = new();
+        private static Logger? _log;
 
+        /// <summary>
+        /// Executable entry point.
+        /// </summary>
+        /// <param name="args">The arguments passed to the executable.</param>
         public static void Main(string[] args)
+        {
+            Options? opt = null;
+            var parser = new Parser(settings => settings.AutoVersion = false);
+            parser.ParseArguments<Options>(args).WithParsed(o => opt = o);
+
+            if (opt == null)
+                return;
+
+            if (Launcher.IsLaunched || opt.NoLauncher)
+                Run(opt);
+            else
+                Launcher.Launch(args);
+        }
+
+        private static void Run(Options options)
         {
             AppDomain.CurrentDomain.UnhandledException += LogUnhandledException;
 
             var assemblyDir = Directory.GetParent(typeof(Program).Assembly.Location).FullName;
-            var dataPathOptionIndex = Array.IndexOf(args, "--userdata");
-            var dataPath = dataPathOptionIndex > 0 ? args[dataPathOptionIndex + 1] : "instance";
-            var environment = new TorchEnvironment(assemblyDir, dataPath, args);
+            var environment = new TorchEnvironment(assemblyDir, options.UserData, null!);
 
             environment.Services.AddSingleton<IPluginService>(_pluginService);
-            _pluginService.LoadPluginDebug(typeof(TestPlugin.TestPlugin).Assembly, environment);
+            foreach (var loadPlugin in options.PluginDlls)
+                _pluginService.LoadPluginDebug(Assembly.LoadFrom(loadPlugin), environment);
             _pluginService.LoadPlugins(environment.Configuration.Plugins, environment);
 
             LogManager.Configuration = environment.Logging;

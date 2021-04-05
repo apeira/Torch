@@ -7,8 +7,14 @@ namespace Torch.Core
     /// </summary>
     public interface ITorchCore
     {
-        event Action<CoreState> StateChanged;
-        
+        /// <summary>
+        /// Raised when <see cref="State"/> is set.
+        /// </summary>
+        event Action<CoreState>? StateChanged;
+
+        /// <summary>
+        /// Gets the current execution stage of the core.
+        /// </summary>
         CoreState State { get; }
 
         /// <summary>
@@ -19,29 +25,7 @@ namespace Torch.Core
         /// <summary>
         /// Signal the core to complete execution and stop.
         /// </summary>
+        /// <param name="callback">A callback to invoke when the core has stopped.</param>
         void SignalStop(Action<ITorchCore>? callback = null);
-    }
-
-    public enum CoreState
-    {
-        /// <summary>
-        /// The core is about to start.
-        /// </summary>
-        BeforeStart,
-
-        /// <summary>
-        /// The core has started.
-        /// </summary>
-        AfterStart,
-
-        /// <summary>
-        /// The core is about to stop.
-        /// </summary>
-        BeforeStop,
-
-        /// <summary>
-        /// The core has stopped.
-        /// </summary>
-        AfterStop,
     }
 }

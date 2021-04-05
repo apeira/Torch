@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Torch.Core.Tests", "src\Tor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPlugin", "src\TestPlugin\TestPlugin.csproj", "{DAFD25F0-8658-4869-A771-A96EAD780A8F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TorchSetup", "src\TorchSetup\TorchSetup.csproj", "{2E19E2FF-B3E5-4ED6-B93E-C57D2AF767BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Release|x64 = Release|x64
@@ -32,9 +34,13 @@ Global
 		{574E6699-A392-4A69-9B3A-1EF5870DA07F}.Debug|x64.Build.0 = Debug|x64
 		{574E6699-A392-4A69-9B3A-1EF5870DA07F}.Release|x64.ActiveCfg = Release|x64
 		{574E6699-A392-4A69-9B3A-1EF5870DA07F}.Release|x64.Build.0 = Release|x64
-		{DAFD25F0-8658-4869-A771-A96EAD780A8F}.Release|x64.ActiveCfg = Release|Any CPU
-		{DAFD25F0-8658-4869-A771-A96EAD780A8F}.Release|x64.Build.0 = Release|Any CPU
-		{DAFD25F0-8658-4869-A771-A96EAD780A8F}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{DAFD25F0-8658-4869-A771-A96EAD780A8F}.Debug|x64.Build.0 = Debug|Any CPU
+		{DAFD25F0-8658-4869-A771-A96EAD780A8F}.Debug|x64.ActiveCfg = Debug|x64
+		{DAFD25F0-8658-4869-A771-A96EAD780A8F}.Debug|x64.Build.0 = Debug|x64
+		{DAFD25F0-8658-4869-A771-A96EAD780A8F}.Release|x64.ActiveCfg = Release|x64
+		{DAFD25F0-8658-4869-A771-A96EAD780A8F}.Release|x64.Build.0 = Release|x64
+		{2E19E2FF-B3E5-4ED6-B93E-C57D2AF767BC}.Debug|x64.ActiveCfg = Debug|x64
+		{2E19E2FF-B3E5-4ED6-B93E-C57D2AF767BC}.Debug|x64.Build.0 = Debug|x64
+		{2E19E2FF-B3E5-4ED6-B93E-C57D2AF767BC}.Release|x64.ActiveCfg = Release|x64
+		{2E19E2FF-B3E5-4ED6-B93E-C57D2AF767BC}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 EndGlobal

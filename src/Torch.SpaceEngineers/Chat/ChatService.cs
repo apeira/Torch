@@ -22,9 +22,9 @@ namespace Torch.SpaceEngineers.Chat
 
         public event ChatMessageReceivedDel? ChatMessageReceived;
 
-        public char CommandPrefix { get; } = '!';
+        public char CommandPrefix { get; } = '.';
 
-        private ChatService(ICommandService commands)
+        public ChatService(ICommandService commands)
         {
             // Hook into chat system
             ChatInterceptPatch.ChatMessageReceived += OnChatMessage;

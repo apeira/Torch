@@ -25,6 +25,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <PackageReference Include="Apeira.StyleCop" Version="1.1.0" />
       <PackageReference Include="HarmonyX" Version="2.4.0" />
       <PackageReference Include="JetBrains.Annotations" Version="2020.3.0" />
       <PackageReference Include="NLog" Version="4.7.9" />

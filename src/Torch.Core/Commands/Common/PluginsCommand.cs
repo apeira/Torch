@@ -1,18 +1,17 @@
 ﻿using System.Linq;
-using Torch.Core.Commands;
 using Torch.Core.Plugins;
 
-namespace Torch.Core
+namespace Torch.Core.Commands.Common
 {
     public class PluginsCommand : ICommand
     {
         private IPluginService _plugins;
-        
+
         public PluginsCommand(IPluginService plugins)
         {
             _plugins = plugins;
         }
-        
+
         public void Execute(ICommandContext context)
         {
             var names = _plugins.Plugins.Select(x => FormatPluginName(x.Value));

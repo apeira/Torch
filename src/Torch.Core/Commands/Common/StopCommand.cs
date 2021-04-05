@@ -1,14 +1,14 @@
-﻿namespace Torch.Core.Commands
+﻿namespace Torch.Core.Commands.Common
 {
     public class StopCommand : ICommand
     {
         private ITorchCore _core;
-        
+
         public StopCommand(ITorchCore core)
         {
             _core = core;
         }
-        
+
         public void Execute(ICommandContext context)
         {
             _core.SignalStop(_ => context.Respond("Core stopped successfully."));
