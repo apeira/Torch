@@ -22,7 +22,7 @@ namespace Torch.Core.Permissions
             _configFilePath = Path.Combine(env.UserDataPath, "config", "permissions.yaml");
             Load(_configFilePath);
         }
-        
+
         public IPermissionCollection GetPermissions(string section, string id)
         {
             if (!_sections.TryGetValue(section, out var dict))
@@ -40,7 +40,7 @@ namespace Torch.Core.Permissions
 
             _default = access;
         }
-        
+
         public void SetDefaultAccess(string node, PermissionModifier access)
         {
             if (access == PermissionModifier.Default)
@@ -53,8 +53,10 @@ namespace Torch.Core.Permissions
         {
             var result = GetPermissions(section, id).Evaluate(SplitNode(node));
             if (result == PermissionModifier.Default)
+            {
                 if (!_defaults.TryGetValue(node, out result))
                     result = _default;
+            }
 
             return result switch
             {
@@ -68,8 +70,10 @@ namespace Torch.Core.Permissions
         {
             var result = GetPermissions(section, id).Evaluate(SplitNode(node));
             if (result == PermissionModifier.Default)
+            {
                 if (!_defaults.TryGetValue(node, out result))
                     result = _default;
+            }
 
             return result switch
             {
@@ -99,9 +103,8 @@ namespace Torch.Core.Permissions
         {
             if (!File.Exists(configFilePath))
                 return;
-            
+
             _sections.Clear();
-            
             using var f = File.OpenRead(configFilePath);
             using var sr = new StreamReader(f);
             var data = _deserializer.Deserialize<Dictionary<string, Dictionary<string, SerializablePermissionCollection>>>(sr);

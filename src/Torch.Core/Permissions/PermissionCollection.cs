@@ -9,15 +9,15 @@ namespace Torch.Core.Permissions
         private readonly List<PermissionExpression> _expressions = new();
 
         private readonly List<IPermissionCollection> _inherits = new();
-        
+
         internal PermissionCollection(string section, string id)
         {
             Section = section;
             Id = id;
         }
-        
+
         public string Section { get; }
-        
+
         public string Id { get; }
 
         public IEnumerable<IPermissionCollection> Inherits => _inherits;
@@ -32,18 +32,20 @@ namespace Torch.Core.Permissions
             _expressions.Add(expression);
             return true;
         }
-        
+
         public bool RemoveExpression(PermissionExpression expression)
         {
             return _expressions.RemoveAll(x => x.ToString() == expression.ToString()) > 0;
         }
-        
+
         public bool AddInherits(IPermissionCollection collection)
         {
             if (WouldCauseCircularInheritance(collection))
+            {
                 throw new InvalidOperationException(
                     "Adding this collection would result in a circular inheritance graph.");
-            
+            }
+
             if (_inherits.Any(x => x.Section == collection.Section && x.Id == collection.Id))
                 return false;
 
@@ -75,10 +77,10 @@ namespace Torch.Core.Permissions
                 if (inherit.WouldCauseCircularInheritance(collection))
                     return true;
             }
-            
+
             return false;
         }
-        
+
         private static PermissionModifier CheckCollection(IEnumerable<IPermissionEvaluator> evaluators, PermissionModifier current, params string[] node)
         {
             var modifier = current;

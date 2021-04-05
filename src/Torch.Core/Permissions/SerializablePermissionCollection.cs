@@ -1,17 +1,19 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using JetBrains.Annotations;
 using YamlDotNet.Serialization;
 
 namespace Torch.Core.Permissions
 {
+    [DataContract]
     [UsedImplicitly(ImplicitUseTargetFlags.Members)]
     internal class SerializablePermissionCollection
     {
-        [YamlMember(Alias = "permissions")]
+        [DataMember]
         public List<string> Permissions { get; set; }
-        
-        [YamlMember(Alias = "inherits")]
+
+        [DataMember]
         public List<string> Inherits { get; set; }
 
         public SerializablePermissionCollection(IPermissionCollection collection)
