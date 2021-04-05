@@ -12,7 +12,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) to learn about the ways you can contribut
   and follow the instructions to link the game DLLs to the solution. If you aren't working on Torch.SpaceEnginers,
   just unload the project because nothing else depends on it. This project will be moved to a separate repository
   in the future.
-* Run the Torch project in Debug mode to automatically load the supplied testing plugin.
+* Build and run Torch.exe in Debug mode with the arguments `--nolauncher --load TestPlugin.dll` to start experimenting.
 
 # Documentation
 Documentation can be found on the `docs` branch or viewed at https://apeira.github.io/Torch.
@@ -23,5 +23,5 @@ Documentation can be found on the `docs` branch or viewed at https://apeira.gith
 | Torch                | Entry point for starting a Torch application. 
 | Torch.Core           | Game-agnostic service APIs and default implementations.
 | Torch.Core.Tests     | Unit tests for Torch.Core.
-| TestPlugin           | A debugging plugin automatically loaded by Torch in development.
+| TestPlugin           | A debugging plugin to test core Torch features.
 | Torch.SpaceEngineers | Plugin to load a Space Engineers Dedicated Server through Torch.
