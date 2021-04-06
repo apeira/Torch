@@ -1,4 +1,6 @@
-﻿namespace TorchSetup.InstallStrategies
+﻿using TorchSetup.Options;
+
+namespace TorchSetup.InstallStrategies
 {
     public interface IInstallStrategy
     {
@@ -11,6 +13,6 @@
         /// Installs Torch using this strategy.
         /// </summary>
         /// <param name="basePath">The base path of the installation.</param>
-        void Install(string basePath);
+        void Install(InstallOptions options);
     }
 }

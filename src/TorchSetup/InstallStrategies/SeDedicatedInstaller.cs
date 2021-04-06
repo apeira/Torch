@@ -1,13 +1,14 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using TorchSetup.Options;
 
 namespace TorchSetup.InstallStrategies
 {
     /// <summary>
-    /// Installs Torch to an existing Space Engineers Dedicated installation.
+    /// Installs Torch to a Space Engineers Dedicated installation.
     /// </summary>
-    public class ExistingSedsInstaller : IInstallStrategy
+    public class SeDedicatedInstaller : IInstallStrategy
     {
         private string? _basePath;
 
@@ -16,11 +17,12 @@ namespace TorchSetup.InstallStrategies
             @"C:\Program Files (x86)\Steam\steamapps\common\SpaceEngineersDedicatedServer";
 
         /// <inheritdoc/>
-        public void Install(string basePath)
+        public void Install(InstallOptions options)
         {
+            var basePath = string.IsNullOrEmpty(options.InstallLocation) ? DefaultPath : options.InstallLocation;
             var testPath = Path.Combine(basePath, "DedicatedServer64", "SpaceEngineersDedicated.exe");
             if (!File.Exists(testPath))
-                throw new InvalidOperationException("The base path doesn't look like a SEDS installation.");
+                throw new InvalidOperationException("The target location doesn't look like an existing SEDS installation.");
 
             _basePath = basePath;
             CleanBaseDir();

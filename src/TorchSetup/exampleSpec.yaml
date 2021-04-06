@@ -1,0 +1,10 @@
+﻿id: my-plugin
+version: 1.2.3-beta
+name: My Plugin
+author: Jimmacle
+desc: A plugin that does some stuff.
+website: https://github.com/apeira/Torch
+entry: MyPlugin.dll
+requires:
+  - some-other-plugin
+  - another-plugin >=1.0.0

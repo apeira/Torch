@@ -20,6 +20,14 @@
     <ItemGroup>
       <PackageReference Include="Apeira.StyleCop" Version="1.1.0" />
       <PackageReference Include="CommandLineParser" Version="2.8.0" />
+      <PackageReference Include="SemanticVersioning" Version="1.3.0" />
+      <PackageReference Include="YamlDotNet" Version="11.0.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="exampleSpec.yaml">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 
 </Project>
