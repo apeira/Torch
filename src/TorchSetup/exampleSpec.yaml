@@ -4,7 +4,7 @@ name: My Plugin
 author: Jimmacle
 desc: A plugin that does some stuff.
 website: https://github.com/apeira/Torch
-entry: MyPlugin.dll
+entryPoint: MyPlugin.dll
 requires:
   - some-other-plugin
   - another-plugin >=1.0.0

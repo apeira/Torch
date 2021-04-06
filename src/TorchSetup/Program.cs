@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using CommandLine;
 using TorchSetup.InstallStrategies;
 using TorchSetup.Options;
 using TorchSetup.Plugins;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
+using Version = SemVer.Version;
 
 namespace TorchSetup
 {
@@ -19,6 +21,9 @@ namespace TorchSetup
 
         public static void Main(string[] args)
         {
+            TestDeps();
+            return;
+            
             var deser = new DeserializerBuilder()
                 .WithNamingConvention(CamelCaseNamingConvention.Instance)
                 .Build();
@@ -35,6 +40,44 @@ namespace TorchSetup
         {
             if (_installStrategies.TryGetValue(opt.BaseGame, out var strategy))
                 strategy.Install(opt);
+        }
+
+        private static void TestDeps()
+        {
+            var spec1 = new PluginSpecification
+            {
+                Id = "test-plugin",
+                Version = Version.Parse("1.2.3"),
+            };
+            var spec2 = new PluginSpecification
+            {
+                Id = "test-plugin",
+                Version = Version.Parse("1.2.4"),
+            };
+            var spec3 = new PluginSpecification
+            {
+                Id = "test-plugin",
+                Version = Version.Parse("1.2.5"),
+            };
+            var spec4 = new PluginSpecification
+            {
+                Id = "test-plugin",
+                Version = Version.Parse("1.2.6"),
+            };
+            var spec5 = new PluginSpecification
+            {
+                Id = "other-plugin",
+                Version = Version.Parse("1.0.0"),
+            };
+
+            var solver = new DependencySolver();
+            solver.AddExclusiveConstraint(spec1, spec2, spec3, spec4);
+            solver.AddRequirementConstraint(spec1, spec5);
+            solver.AddSingleConstraint(spec1);
+            solver.FindSolutions();
+            Console.WriteLine("SOLUTIONS:");
+            foreach (var solution in solver.Solutions)
+                Console.WriteLine(string.Join(", ", solution.Select(x => x ? 'T' : 'F')));
         }
     }
 }

@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
 using SemVer;
 using YamlDotNet.Serialization;
+using YamlDotNet.Serialization.NamingConventions;
 using Version = SemVer.Version;
 
 namespace TorchSetup.Plugins
@@ -44,7 +46,7 @@ namespace TorchSetup.Plugins
         [YamlMember(Alias = "website", DefaultValuesHandling = DefaultValuesHandling.OmitNull)]
         public string? Website { get; set; }
 
-        [YamlMember(Alias = "entry")]
+        [YamlMember(Alias = "entryPoint")]
         public string EntryPoint { get; set; }
 
         [YamlIgnore]
@@ -95,6 +97,15 @@ namespace TorchSetup.Plugins
             const string allowedChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-";
             if (id.Any(x => !allowedChars.Contains(x)))
                 throw new ArgumentException($"The ID '{id}' contains invalid characters.");
+        }
+
+        public static PluginSpecification Load(string file)
+        {
+            var deser = new DeserializerBuilder()
+                .WithNamingConvention(CamelCaseNamingConvention.Instance)
+                .Build();
+
+            return deser.Deserialize<PluginSpecification>(File.ReadAllText("exampleSpec.yaml"));
         }
     }
 }
