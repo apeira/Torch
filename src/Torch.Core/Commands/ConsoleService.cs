@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Threading;
@@ -20,6 +21,13 @@ namespace Torch.Core.Commands
         private (int Left, int Top) _consoleWritePosition;
         private TextWriter? _stdOut;
         private int _inputCursor;
+        private ConsoleKey _previousKey;
+
+        //Create list in this thread
+        private List<string> _commandHistory = new List<string>();
+        private int _commandIndex = -1;
+        private string _currentCommand;
+
 
         public ConsoleService(ITorchCore core)
         {
@@ -46,84 +54,129 @@ namespace Torch.Core.Commands
 
         private void StartListener()
         {
-
-            
-
             _consoleWritePosition = (Console.CursorLeft, Console.CursorTop);
-            _stdOut = new StreamWriter(Console.OpenStandardOutput()){AutoFlush = true};
+            _stdOut = new StreamWriter(Console.OpenStandardOutput()) { AutoFlush = true };
             var notifyingOut = new NotifyingTextWriter(_stdOut);
             Console.SetOut(notifyingOut);
             notifyingOut.BeforeWrite += HandleBeforeWrite;
             notifyingOut.AfterWrite += HandleAfterWrite;
 
             RewriteUserInput();
-            Task.Run(() =>
-            {
-                while (!_cancelTokenSource.Token.IsCancellationRequested)
-                {
-                    try
-                    {
-                        var key = Console.ReadKey(true);
-
-                        switch (key.Key)
-                        {
-                            case ConsoleKey.Enter:
-                                if (_currentUserInput.Length == 0)
-                                    return;
-                                
-                                var input = _currentUserInput.ToString();
-                                _currentUserInput.Clear();
-                                _inputCursor = 0;
-
-                                if (_commandService != null)
-                                    _commandService?.Execute(this, input, Console.WriteLine);
-                                else
-                                    Console.WriteLine("The command service is not available.");
-                                break;
-                            case ConsoleKey.Backspace:
-                                if (_currentUserInput.Length > 0)
-                                {
-                                    _currentUserInput.Remove(_inputCursor - 1, 1);
-                                    _inputCursor--;
-                                }
-                                break;
-                            case ConsoleKey.Delete:
-                                if (_inputCursor < _currentUserInput.Length)
-                                    _currentUserInput.Remove(_inputCursor, 1);
-                                break;
-                            case ConsoleKey.LeftArrow:
-                                if (_inputCursor > 0)
-                                    _inputCursor--;
-                                break;
-                            case ConsoleKey.RightArrow:
-                                if (_inputCursor < _currentUserInput.Length)
-                                    _inputCursor++;
-                                break;
-                            case ConsoleKey.UpArrow:
-                            case ConsoleKey.DownArrow:
-                                // TODO support command history
-                                break;
-                            case ConsoleKey.Tab:
-                                // TODO support tab completion
-                                break;
-                            default:
-                                if (_inputCursor == _currentUserInput.Length)
-                                    _currentUserInput.Append(key.KeyChar);
-                                else
-                                    _currentUserInput.Insert(_inputCursor, key.KeyChar);
-                                _inputCursor++;
-                                break;
-                        }
-
-                        RewriteUserInput();
-                    }
-                    catch (Exception e)
-                    {
-                        _log.Error(e);
-                    }
-                }
-            }, _cancelTokenSource.Token);
+            Task.Run(() => Listener(), _cancelTokenSource.Token);
         }
+
+        private void Listener()
+        {
+
+            while (!_cancelTokenSource.Token.IsCancellationRequested)
+            {
+                try
+                {
+                    var key = Console.ReadKey(true);
+
+                    switch (key.Key)
+                    {
+                        case ConsoleKey.Enter:
+                            if (_currentUserInput.Length == 0)
+                                return;
+
+                            var input = _currentUserInput.ToString();
+                            _currentUserInput.Clear();
+                            _inputCursor = 0;
+
+                            // Add this command to the beginning of the command history
+                            _commandHistory.Insert(0, input);
+
+                            if (_commandService != null)
+                                _commandService?.Execute(this, input, Console.WriteLine);
+                            else
+                                Console.WriteLine("The command service is not available.");
+
+                            break;
+                        case ConsoleKey.Backspace:
+                            if (_currentUserInput.Length > 0)
+                            {
+                                _currentUserInput.Remove(_inputCursor - 1, 1);
+                                _inputCursor--;
+                            }
+
+                            break;
+                        case ConsoleKey.Delete:
+                            if (_inputCursor < _currentUserInput.Length)
+                                _currentUserInput.Remove(_inputCursor, 1);
+                            break;
+                        case ConsoleKey.LeftArrow:
+                            if (_inputCursor > 0)
+                                _inputCursor--;
+                            break;
+                        case ConsoleKey.RightArrow:
+                            if (_inputCursor < _currentUserInput.Length)
+                                _inputCursor++;
+                            break;
+                        case ConsoleKey.UpArrow:
+                        case ConsoleKey.DownArrow:
+                            // No need to run this if the history is empty
+                            if (_commandHistory.Count == 0)
+                                break;
+
+                            string previousCommand = IteratePreviousCommands(key.Key);
+                            _currentUserInput.Append(previousCommand);
+                            _inputCursor = previousCommand.Length;
+                            break;
+                        case ConsoleKey.Tab:
+                            // TODO support tab completion
+                            break;
+                        default:
+                            if (_inputCursor == _currentUserInput.Length)
+                                _currentUserInput.Append(key.KeyChar);
+                            else
+                                _currentUserInput.Insert(_inputCursor, key.KeyChar);
+                            _inputCursor++;
+                            break;
+                    }
+
+
+                    _previousKey = key.Key;
+                    RewriteUserInput();
+                }
+                catch (Exception e)
+                {
+                    _log.Error(e);
+                }
+            }
+        }
+
+        private string IteratePreviousCommands(ConsoleKey currentKey)
+        {
+            // Reset variables. (after you use a different function, current command index is reset)
+            if (_previousKey != ConsoleKey.UpArrow && _previousKey != ConsoleKey.DownArrow)
+            {
+                _commandIndex = -1;
+                _currentCommand = _currentUserInput.ToString();
+            }
+
+            _currentUserInput.Clear();
+            if (currentKey == ConsoleKey.UpArrow)
+                _commandIndex++;
+
+            if (currentKey == ConsoleKey.DownArrow)
+                _commandIndex--;
+
+            // If Index is -1 we need to return our initial command
+            if (_commandIndex <= -1)
+            {
+                _commandIndex = -1;
+                return _currentCommand;
+            }
+
+            // If index is over length we need to reset it back to max
+            if (_commandIndex >= _commandHistory.Count - 1)
+                _commandIndex = _commandHistory.Count - 1;
+
+            // Return specified command index
+            return _commandHistory[_commandIndex];
+        }
+
 
         private void HandleAfterWrite()
         {
