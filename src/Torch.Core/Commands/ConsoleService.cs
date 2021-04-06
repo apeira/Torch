@@ -23,7 +23,7 @@ namespace Torch.Core.Commands
         private int _inputCursor;
         private ConsoleKey _previousKey;
 
-        //Create list in this thread
+        // Command History
         private List<string> _commandHistory = new List<string>();
         private int _commandIndex = -1;
         private string _currentCommand;
@@ -91,8 +91,8 @@ namespace Torch.Core.Commands
                                 _commandService?.Execute(this, input, Console.WriteLine);
                             else
                                 Console.WriteLine("The command service is not available.");
-
                             break;
+
                         case ConsoleKey.Backspace:
                             if (_currentUserInput.Length > 0)
                             {
@@ -101,18 +101,22 @@ namespace Torch.Core.Commands
                             }
 
                             break;
+
                         case ConsoleKey.Delete:
                             if (_inputCursor < _currentUserInput.Length)
                                 _currentUserInput.Remove(_inputCursor, 1);
                             break;
+
                         case ConsoleKey.LeftArrow:
                             if (_inputCursor > 0)
                                 _inputCursor--;
                             break;
+
                         case ConsoleKey.RightArrow:
                             if (_inputCursor < _currentUserInput.Length)
                                 _inputCursor++;
                             break;
+
                         case ConsoleKey.UpArrow:
                         case ConsoleKey.DownArrow:
                             // No need to run this if the history is empty
@@ -123,9 +127,11 @@ namespace Torch.Core.Commands
                             _currentUserInput.Append(previousCommand);
                             _inputCursor = previousCommand.Length;
                             break;
+
                         case ConsoleKey.Tab:
                             // TODO support tab completion
                             break;
+
                         default:
                             if (_inputCursor == _currentUserInput.Length)
                                 _currentUserInput.Append(key.KeyChar);
@@ -145,6 +151,8 @@ namespace Torch.Core.Commands
                 }
             }
         }
+
+
 
         private string IteratePreviousCommands(ConsoleKey currentKey)
         {
@@ -177,7 +185,6 @@ namespace Torch.Core.Commands
             return _commandHistory[_commandIndex];
         }
 
-
         private void HandleAfterWrite()
         {
             _consoleWritePosition = (Console.CursorLeft, Console.CursorTop);
@@ -198,7 +205,7 @@ namespace Torch.Core.Commands
             ClearUserInput();
             var (left, top) = GetUserCursor();
             Console.SetCursorPosition(0, top);
-            _stdOut!.Write($"> {_currentUserInput}");
+            _stdOut!.Write($"> \u001b[33;1m{_currentUserInput}\u001b[0m");
             Console.SetCursorPosition(left, top);
             Console.CursorVisible = true;
         }
