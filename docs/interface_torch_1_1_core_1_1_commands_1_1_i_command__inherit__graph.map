@@ -1,6 +1,6 @@
 <map id="Torch.Core.Commands.ICommand" name="Torch.Core.Commands.ICommand">
 <area shape="rect" id="node1" title=" " alt="" coords="5,78,227,105"/>
-<area shape="rect" id="node2" href="$class_torch_1_1_core_1_1_commands_1_1_delegate_command.html" title=" " alt="" coords="275,5,485,47"/>
-<area shape="rect" id="node3" href="$class_torch_1_1_core_1_1_commands_1_1_stop_command.html" title=" " alt="" coords="287,71,473,112"/>
-<area shape="rect" id="node4" href="$class_torch_1_1_core_1_1_plugins_command.html" title=" " alt="" coords="285,137,475,163"/>
+<area shape="rect" id="node2" href="$class_torch_1_1_core_1_1_commands_1_1_common_1_1_plugins_command.html" title=" " alt="" coords="275,5,489,47"/>
+<area shape="rect" id="node3" href="$class_torch_1_1_core_1_1_commands_1_1_common_1_1_stop_command.html" title=" " alt="" coords="275,71,489,112"/>
+<area shape="rect" id="node4" href="$class_torch_1_1_core_1_1_commands_1_1_delegate_command.html" title=" " alt="" coords="277,136,487,177"/>
 </map>

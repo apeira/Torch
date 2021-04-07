@@ -1,13 +1,8 @@
 var searchData=
 [
-  ['accepts_2',['Accepts',['../class_torch_1_1_core_1_1_yaml_version_converter.html#abb2f290e4df996b91f0e67f78cd65bff',1,'Torch::Core::YamlVersionConverter']]],
-  ['activateplugins_3',['ActivatePlugins',['../class_torch_1_1_core_1_1_plugins_1_1_plugin_service.html#ad996463cc52d6d4452d8aea63adcf9e0',1,'Torch::Core::Plugins::PluginService']]],
-  ['addexpression_4',['AddExpression',['../interface_torch_1_1_core_1_1_permissions_1_1_i_permission_collection.html#aeef0561286a76e22dcb9b3776c076e50',1,'Torch.Core.Permissions.IPermissionCollection.AddExpression()'],['../class_torch_1_1_core_1_1_permissions_1_1_permission_collection.html#a7e571682958d3f4dc6c0ad18ada59847',1,'Torch.Core.Permissions.PermissionCollection.AddExpression()']]],
-  ['addinherits_5',['AddInherits',['../interface_torch_1_1_core_1_1_permissions_1_1_i_permission_collection.html#abb84306c041b1ed3346fe14c6c1c1c74',1,'Torch.Core.Permissions.IPermissionCollection.AddInherits()'],['../class_torch_1_1_core_1_1_permissions_1_1_permission_collection.html#a3caa8edc4f8497be954ace3e23b5617a',1,'Torch.Core.Permissions.PermissionCollection.AddInherits()']]],
-  ['addprocessorstep_6',['AddProcessorStep',['../class_torch_1_1_core_1_1_commands_1_1_command_service.html#aaabf439f8ab7e0b2c88f36afa23b0c3c',1,'Torch.Core.Commands.CommandService.AddProcessorStep(IProcessorStep preprocessor)'],['../class_torch_1_1_core_1_1_commands_1_1_command_service.html#acdca72988520adb76c0c2ed2fc2b811e',1,'Torch.Core.Commands.CommandService.AddProcessorStep(CommandProcessorDel processor)'],['../interface_torch_1_1_core_1_1_commands_1_1_i_command_service.html#a8ffa65598e473705ff9e6f0760959a42',1,'Torch.Core.Commands.ICommandService.AddProcessorStep(IProcessorStep preprocessor)'],['../interface_torch_1_1_core_1_1_commands_1_1_i_command_service.html#a68c6169977f9fd83e93f4f55e1dd5391',1,'Torch.Core.Commands.ICommandService.AddProcessorStep(CommandProcessorDel processor)']]],
-  ['afterstart_7',['AfterStart',['../namespace_torch_1_1_core.html#aec29aa5916238d65637ec06faa33cfc8a427de044c2fb29f42c02e7822d7f9eed',1,'Torch::Core']]],
-  ['afterstop_8',['AfterStop',['../namespace_torch_1_1_core.html#aec29aa5916238d65637ec06faa33cfc8af003aaa9a29b09a576bb5bbf3ee73ea3',1,'Torch::Core']]],
-  ['afterwrite_9',['AfterWrite',['../class_torch_1_1_core_1_1_commands_1_1_notifying_text_writer.html#aa85b2755dcab761ab5ea0761000fba54',1,'Torch::Core::Commands::NotifyingTextWriter']]],
-  ['allow_10',['Allow',['../namespace_torch_1_1_core_1_1_permissions.html#a87cc1f3729b472ba6152b690b82f0c19a45f0fb72a0defdfdb01de4b5a5a6876b',1,'Torch::Core::Permissions']]],
-  ['args_11',['Args',['../interface_torch_1_1_core_1_1_commands_1_1_i_command_context.html#ad708ca2fd447234a37dabbfd8494e49d',1,'Torch::Core::Commands::ICommandContext']]]
+  ['basepath_10',['BasePath',['../class_torch_1_1_core_1_1_plugins_1_1_plugin_info.html#ac4ecbaa86584de71720b6cba3c4c682a',1,'Torch::Core::Plugins::PluginInfo']]],
+  ['beforestart_11',['BeforeStart',['../namespace_torch_1_1_core.html#aec29aa5916238d65637ec06faa33cfc8aaf5ccb388f6eddf4561308071e39ab2f',1,'Torch::Core']]],
+  ['beforestop_12',['BeforeStop',['../namespace_torch_1_1_core.html#aec29aa5916238d65637ec06faa33cfc8a648397e41c9ba88abfeead1e80600b6e',1,'Torch::Core']]],
+  ['beforewrite_13',['BeforeWrite',['../class_torch_1_1_core_1_1_commands_1_1_notifying_text_writer.html#a3f59d0e9bb1a4dd6eb06d38af2adfdcd',1,'Torch::Core::Commands::NotifyingTextWriter']]],
+  ['binpath_14',['BinPath',['../class_torch_1_1_core_1_1_torch_environment.html#aac5be0d299e0cf691c7eefeddec84270',1,'Torch::Core::TorchEnvironment']]]
 ];

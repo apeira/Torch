@@ -1,5 +1,6 @@
 var class_torch_1_1_space_engineers_1_1_chat_1_1_chat_service =
 [
+    [ "ChatService", "class_torch_1_1_space_engineers_1_1_chat_1_1_chat_service.html#a1618a83e0ecead8a61773d2ef5f8a9e7", null ],
     [ "SendMessage", "class_torch_1_1_space_engineers_1_1_chat_1_1_chat_service.html#afcec881308baa9bad2f44aa6475a4f07", null ],
     [ "SendMessage", "class_torch_1_1_space_engineers_1_1_chat_1_1_chat_service.html#ad37405617b7ab1795091563dd942235d", null ],
     [ "SendMessage", "class_torch_1_1_space_engineers_1_1_chat_1_1_chat_service.html#a4da1e727ec2f90c5ce5b5fac6c4153e7", null ],

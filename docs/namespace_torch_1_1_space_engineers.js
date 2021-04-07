@@ -6,6 +6,6 @@ var namespace_torch_1_1_space_engineers =
     ] ],
     [ "Players", "namespace_torch_1_1_space_engineers_1_1_players.html", "namespace_torch_1_1_space_engineers_1_1_players" ],
     [ "ChatMessageEvent", "struct_torch_1_1_space_engineers_1_1_chat_message_event.html", "struct_torch_1_1_space_engineers_1_1_chat_message_event" ],
-    [ "SEDediCore", "class_torch_1_1_space_engineers_1_1_s_e_dedi_core.html", "class_torch_1_1_space_engineers_1_1_s_e_dedi_core" ],
-    [ "SEDediPlugin", "class_torch_1_1_space_engineers_1_1_s_e_dedi_plugin.html", null ]
+    [ "SpaceDediCore", "class_torch_1_1_space_engineers_1_1_space_dedi_core.html", "class_torch_1_1_space_engineers_1_1_space_dedi_core" ],
+    [ "SpaceDediPlugin", "class_torch_1_1_space_engineers_1_1_space_dedi_plugin.html", "class_torch_1_1_space_engineers_1_1_space_dedi_plugin" ]
 ];

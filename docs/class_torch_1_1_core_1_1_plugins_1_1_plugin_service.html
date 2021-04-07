@@ -90,6 +90,9 @@ $(document).ready(function(){initNavTree('class_torch_1_1_core_1_1_plugins_1_1_p
 <div class="title">Torch.Core.Plugins.PluginService Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p> 
+ <a href="class_torch_1_1_core_1_1_plugins_1_1_plugin_service.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Torch.Core.Plugins.PluginService:</div>
 <div class="dyncontent">
@@ -106,10 +109,13 @@ Collaboration diagram for Torch.Core.Plugins.PluginService:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab0c3987a6af1b7cc8c8bedd367c6c894"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_torch_1_1_core_1_1_plugins_1_1_plugin_service.html#ab0c3987a6af1b7cc8c8bedd367c6c894">LoadPluginDebug</a> (Assembly asm, <a class="el" href="class_torch_1_1_core_1_1_torch_environment.html">TorchEnvironment</a> env)</td></tr>
+<tr class="memdesc:ab0c3987a6af1b7cc8c8bedd367c6c894"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a plugin directly by DLL path with dummy metadata. Only for testing/debugging.  <a href="class_torch_1_1_core_1_1_plugins_1_1_plugin_service.html#ab0c3987a6af1b7cc8c8bedd367c6c894">More...</a><br /></td></tr>
 <tr class="separator:ab0c3987a6af1b7cc8c8bedd367c6c894"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a472aa07f9fd285f06501306d78484030"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_torch_1_1_core_1_1_plugins_1_1_plugin_service.html#a472aa07f9fd285f06501306d78484030">LoadPlugins</a> (IEnumerable&lt; string &gt; pluginFolderPaths, <a class="el" href="class_torch_1_1_core_1_1_torch_environment.html">TorchEnvironment</a> env)</td></tr>
+<tr class="memdesc:a472aa07f9fd285f06501306d78484030"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads plugins from a list of plugin folders. Folder structure must be the standard plugin format.  <a href="class_torch_1_1_core_1_1_plugins_1_1_plugin_service.html#a472aa07f9fd285f06501306d78484030">More...</a><br /></td></tr>
 <tr class="separator:a472aa07f9fd285f06501306d78484030"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad996463cc52d6d4452d8aea63adcf9e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_torch_1_1_core_1_1_plugins_1_1_plugin_service.html#ad996463cc52d6d4452d8aea63adcf9e0">ActivatePlugins</a> (IServiceProvider serviceProvider)</td></tr>
+<tr class="memdesc:ad996463cc52d6d4452d8aea63adcf9e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instantiates the plugins loaded with <a class="el" href="class_torch_1_1_core_1_1_plugins_1_1_plugin_service.html#a472aa07f9fd285f06501306d78484030" title="Loads plugins from a list of plugin folders. Folder structure must be the standard plugin format.">PluginService.LoadPlugins</a> using dependency injection.  <a href="class_torch_1_1_core_1_1_plugins_1_1_plugin_service.html#ad996463cc52d6d4452d8aea63adcf9e0">More...</a><br /></td></tr>
 <tr class="separator:ad996463cc52d6d4452d8aea63adcf9e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
@@ -117,15 +123,15 @@ Properties</h2></td></tr>
 <tr class="memitem:a6216ba41a4bf709dcc4935ec2ae0f6d2"><td class="memItemLeft" align="right" valign="top">IReadOnlyDictionary&lt; string, <a class="el" href="class_torch_1_1_core_1_1_plugins_1_1_plugin.html">Plugin</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_torch_1_1_core_1_1_plugins_1_1_plugin_service.html#a6216ba41a4bf709dcc4935ec2ae0f6d2">Plugins</a><code> [get]</code></td></tr>
 <tr class="separator:a6216ba41a4bf709dcc4935ec2ae0f6d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af180096d515f0ea14a469bc4192404f3"><td class="memItemLeft" align="right" valign="top">IReadOnlyDictionary&lt; string, Harmony &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_torch_1_1_core_1_1_plugins_1_1_plugin_service.html#af180096d515f0ea14a469bc4192404f3">Patchers</a><code> [get]</code></td></tr>
+<tr class="memdesc:af180096d515f0ea14a469bc4192404f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the Harmony patchers by plugin ID.  <a href="class_torch_1_1_core_1_1_plugins_1_1_plugin_service.html#af180096d515f0ea14a469bc4192404f3">More...</a><br /></td></tr>
 <tr class="separator:af180096d515f0ea14a469bc4192404f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header properties_interface_torch_1_1_core_1_1_plugins_1_1_i_plugin_service"><td colspan="2" onclick="javascript:toggleInherit('properties_interface_torch_1_1_core_1_1_plugins_1_1_i_plugin_service')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="interface_torch_1_1_core_1_1_plugins_1_1_i_plugin_service.html">Torch.Core.Plugins.IPluginService</a></td></tr>
 <tr class="memitem:aad64f594f74972f188e07cd7e7ad2acc inherit properties_interface_torch_1_1_core_1_1_plugins_1_1_i_plugin_service"><td class="memItemLeft" align="right" valign="top">IReadOnlyDictionary&lt; string, <a class="el" href="class_torch_1_1_core_1_1_plugins_1_1_plugin.html">Plugin</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_torch_1_1_core_1_1_plugins_1_1_i_plugin_service.html#aad64f594f74972f188e07cd7e7ad2acc">Plugins</a><code> [get]</code></td></tr>
+<tr class="memdesc:aad64f594f74972f188e07cd7e7ad2acc inherit properties_interface_torch_1_1_core_1_1_plugins_1_1_i_plugin_service"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets currently active plugins.  <a href="interface_torch_1_1_core_1_1_plugins_1_1_i_plugin_service.html#aad64f594f74972f188e07cd7e7ad2acc">More...</a><br /></td></tr>
 <tr class="separator:aad64f594f74972f188e07cd7e7ad2acc inherit properties_interface_torch_1_1_core_1_1_plugins_1_1_i_plugin_service"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_plugin_service_8cs_source.html#l00026">26</a> of file <a class="el" href="_plugin_service_8cs_source.html">PluginService.cs</a>.</p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+<div class="textblock"></div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ad996463cc52d6d4452d8aea63adcf9e0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad996463cc52d6d4452d8aea63adcf9e0">&#9670;&nbsp;</a></span>ActivatePlugins()</h2>
 
@@ -142,7 +148,19 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_plugin_service_8cs_source.html#l00124">124</a> of file <a class="el" href="_plugin_service_8cs_source.html">PluginService.cs</a>.</p>
+<p>Instantiates the plugins loaded with <a class="el" href="class_torch_1_1_core_1_1_plugins_1_1_plugin_service.html#a472aa07f9fd285f06501306d78484030" title="Loads plugins from a list of plugin folders. Folder structure must be the standard plugin format.">PluginService.LoadPlugins</a> using dependency injection. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">serviceProvider</td><td>The service provider to use to activate plugin objects.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="class_torch_1_1_core_1_1_plugins_1_1_plugin_load_exception.html" title="An exception thrown when a plugin fails to load.">PluginLoadException</a></td><td>A plugin constructor threw an exception.</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -172,7 +190,14 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_plugin_service_8cs_source.html#l00045">45</a> of file <a class="el" href="_plugin_service_8cs_source.html">PluginService.cs</a>.</p>
+<p>Loads a plugin directly by DLL path with dummy metadata. Only for testing/debugging. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">asm</td><td>An assembly containing a <a class="el" href="class_torch_1_1_core_1_1_plugins_1_1_plugin.html">Plugin</a> subclass.</td></tr>
+    <tr><td class="paramname">env</td><td>The current <a class="el" href="namespace_torch.html">Torch</a> environment.</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -202,7 +227,20 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_plugin_service_8cs_source.html#l00060">60</a> of file <a class="el" href="_plugin_service_8cs_source.html">PluginService.cs</a>.</p>
+<p>Loads plugins from a list of plugin folders. Folder structure must be the standard plugin format. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pluginFolderPaths</td><td>The set of plugin folders to load from.</td></tr>
+    <tr><td class="paramname">env</td><td>The current <a class="el" href="namespace_torch.html">Torch</a> environment.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="class_torch_1_1_core_1_1_plugins_1_1_plugin_load_exception.html" title="An exception thrown when a plugin fails to load.">PluginLoadException</a></td><td>The plugin entry DLL is doesn't exist or doesn't contain a <a class="el" href="class_torch_1_1_core_1_1_plugins_1_1_plugin.html">Plugin</a> subclass.</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -227,7 +265,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_plugin_service_8cs_source.html#l00042">42</a> of file <a class="el" href="_plugin_service_8cs_source.html">PluginService.cs</a>.</p>
+<p>Gets the Harmony patchers by plugin ID. </p>
 
 </div>
 </div>
@@ -251,12 +289,12 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_plugin_service_8cs_source.html#l00040">40</a> of file <a class="el" href="_plugin_service_8cs_source.html">PluginService.cs</a>.</p>
+<p></p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>src/Torch.Core/Plugins/<a class="el" href="_plugin_service_8cs_source.html">PluginService.cs</a></li>
+<li>src/Torch.Core/Plugins/<a class="el" href="_plugin_service_8cs.html">PluginService.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

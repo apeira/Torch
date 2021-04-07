@@ -1,4 +1,4 @@
 <map id="Torch.Core.Plugins.PluginLoadException" name="Torch.Core.Plugins.PluginLoadException">
-<area shape="rect" id="node1" title=" " alt="" coords="5,80,177,121"/>
+<area shape="rect" id="node1" title="An exception thrown when a plugin fails to load." alt="" coords="5,80,177,121"/>
 <area shape="rect" id="node2" title=" " alt="" coords="51,5,131,32"/>
 </map>

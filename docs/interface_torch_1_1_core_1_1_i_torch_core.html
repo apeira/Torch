@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('interface_torch_1_1_core_1_1_i_torch_c
 <div class="dynheader">
 Inheritance diagram for Torch.Core.ITorchCore:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="interface_torch_1_1_core_1_1_i_torch_core__inherit__graph.svg" width="403" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="interface_torch_1_1_core_1_1_i_torch_core__inherit__graph.svg" width="368" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -113,17 +113,17 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:a2bc3f0fc3150c512a5782440950abfee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_torch_1_1_core.html#aec29aa5916238d65637ec06faa33cfc8">CoreState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_torch_1_1_core_1_1_i_torch_core.html#a2bc3f0fc3150c512a5782440950abfee">State</a><code> [get]</code></td></tr>
+<tr class="memdesc:a2bc3f0fc3150c512a5782440950abfee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current execution stage of the core.  <a href="interface_torch_1_1_core_1_1_i_torch_core.html#a2bc3f0fc3150c512a5782440950abfee">More...</a><br /></td></tr>
 <tr class="separator:a2bc3f0fc3150c512a5782440950abfee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="events"></a>
 Events</h2></td></tr>
-<tr class="memitem:ae9d63a7c67aadbf4a8769d9eff9b0c40"><td class="memItemLeft" align="right" valign="top">Action&lt; <a class="el" href="namespace_torch_1_1_core.html#aec29aa5916238d65637ec06faa33cfc8">CoreState</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_torch_1_1_core_1_1_i_torch_core.html#ae9d63a7c67aadbf4a8769d9eff9b0c40">StateChanged</a></td></tr>
-<tr class="separator:ae9d63a7c67aadbf4a8769d9eff9b0c40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f555c92efd75bcb7f59ddd527ea6522"><td class="memItemLeft" align="right" valign="top">Action&lt; <a class="el" href="namespace_torch_1_1_core.html#aec29aa5916238d65637ec06faa33cfc8">CoreState</a> &gt;?&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_torch_1_1_core_1_1_i_torch_core.html#a3f555c92efd75bcb7f59ddd527ea6522">StateChanged</a></td></tr>
+<tr class="memdesc:a3f555c92efd75bcb7f59ddd527ea6522"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raised when <a class="el" href="interface_torch_1_1_core_1_1_i_torch_core.html#a2bc3f0fc3150c512a5782440950abfee" title="Gets the current execution stage of the core.">State</a> is set.  <a href="interface_torch_1_1_core_1_1_i_torch_core.html#a3f555c92efd75bcb7f59ddd527ea6522">More...</a><br /></td></tr>
+<tr class="separator:a3f555c92efd75bcb7f59ddd527ea6522"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents an object responsible for controlling the lifetime of the <a class="el" href="namespace_torch.html">Torch</a> application. </p>
-
-<p class="definition">Definition at line <a class="el" href="_i_torch_core_8cs_source.html#l00008">8</a> of file <a class="el" href="_i_torch_core_8cs_source.html">ITorchCore.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="acce127ec4c8b271d499d12ebcff27406"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acce127ec4c8b271d499d12ebcff27406">&#9670;&nbsp;</a></span>Run()</h2>
@@ -142,7 +142,7 @@ Events</h2></td></tr>
 
 <p>Begins executing the core and stops on its own or after SignalStop is called. </p>
 
-<p>Implemented in <a class="el" href="class_torch_1_1_space_engineers_1_1_s_e_dedi_core.html#a2883b728e744234aafcd0e341894956d">Torch.SpaceEngineers.SEDediCore</a>, and <a class="el" href="class_test_plugin_1_1_test_core.html#a60abfd04140e56346fa187b60a93e6bf">TestPlugin.TestCore</a>.</p>
+<p>Implemented in <a class="el" href="class_torch_1_1_space_engineers_1_1_space_dedi_core.html#abcdbd5685b2c9ff1ab4bf59638f84866">Torch.SpaceEngineers.SpaceDediCore</a>, and <a class="el" href="class_test_plugin_1_1_test_core.html#a60abfd04140e56346fa187b60a93e6bf">TestPlugin.TestCore</a>.</p>
 
 </div>
 </div>
@@ -163,12 +163,18 @@ Events</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Signal the core to complete execution and stop. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">callback</td><td>A callback to invoke when the core has stopped.</td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>Implemented in <a class="el" href="class_test_plugin_1_1_test_core.html#a481f7a8bb43e2736f3162c3951476820">TestPlugin.TestCore</a>, and <a class="el" href="class_torch_1_1_space_engineers_1_1_s_e_dedi_core.html#a361e237ab5c8243562bbe3bd4f2618f9">Torch.SpaceEngineers.SEDediCore</a>.</p>
+<p>Implemented in <a class="el" href="class_test_plugin_1_1_test_core.html#a481f7a8bb43e2736f3162c3951476820">TestPlugin.TestCore</a>, and <a class="el" href="class_torch_1_1_space_engineers_1_1_space_dedi_core.html#a37f33e0b8c74559b4d26ef503b199db6">Torch.SpaceEngineers.SpaceDediCore</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="interface_torch_1_1_core_1_1_i_torch_core_ab4e299b713ccf4f4b234ff39defd192a_icgraph.svg" width="464" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="interface_torch_1_1_core_1_1_i_torch_core_ab4e299b713ccf4f4b234ff39defd192a_icgraph.svg" width="492" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -195,29 +201,29 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_i_torch_core_8cs_source.html#l00012">12</a> of file <a class="el" href="_i_torch_core_8cs_source.html">ITorchCore.cs</a>.</p>
+<p>Gets the current execution stage of the core. </p>
 
 </div>
 </div>
 <h2 class="groupheader">Event Documentation</h2>
-<a id="ae9d63a7c67aadbf4a8769d9eff9b0c40"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae9d63a7c67aadbf4a8769d9eff9b0c40">&#9670;&nbsp;</a></span>StateChanged</h2>
+<a id="a3f555c92efd75bcb7f59ddd527ea6522"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f555c92efd75bcb7f59ddd527ea6522">&#9670;&nbsp;</a></span>StateChanged</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Action&lt;<a class="el" href="namespace_torch_1_1_core.html#aec29aa5916238d65637ec06faa33cfc8">CoreState</a>&gt; Torch.Core.ITorchCore.StateChanged</td>
+          <td class="memname">Action&lt;<a class="el" href="namespace_torch_1_1_core.html#aec29aa5916238d65637ec06faa33cfc8">CoreState</a>&gt;? Torch.Core.ITorchCore.StateChanged</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_i_torch_core_8cs_source.html#l00010">10</a> of file <a class="el" href="_i_torch_core_8cs_source.html">ITorchCore.cs</a>.</p>
+<p>Raised when <a class="el" href="interface_torch_1_1_core_1_1_i_torch_core.html#a2bc3f0fc3150c512a5782440950abfee" title="Gets the current execution stage of the core.">State</a> is set. </p>
 
 </div>
 </div>
 <hr/>The documentation for this interface was generated from the following file:<ul>
-<li>src/Torch.Core/<a class="el" href="_i_torch_core_8cs_source.html">ITorchCore.cs</a></li>
+<li>src/Torch.Core/<a class="el" href="_i_torch_core_8cs.html">ITorchCore.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -7,7 +7,6 @@ var namespace_torch_1_1_core =
     [ "Tests", "namespace_torch_1_1_core_1_1_tests.html", "namespace_torch_1_1_core_1_1_tests" ],
     [ "IPlayer", "interface_torch_1_1_core_1_1_i_player.html", "interface_torch_1_1_core_1_1_i_player" ],
     [ "ITorchCore", "interface_torch_1_1_core_1_1_i_torch_core.html", "interface_torch_1_1_core_1_1_i_torch_core" ],
-    [ "PluginsCommand", "class_torch_1_1_core_1_1_plugins_command.html", "class_torch_1_1_core_1_1_plugins_command" ],
     [ "TorchConfiguration", "class_torch_1_1_core_1_1_torch_configuration.html", "class_torch_1_1_core_1_1_torch_configuration" ],
     [ "TorchEnvironment", "class_torch_1_1_core_1_1_torch_environment.html", "class_torch_1_1_core_1_1_torch_environment" ],
     [ "YamlVersionConverter", "class_torch_1_1_core_1_1_yaml_version_converter.html", "class_torch_1_1_core_1_1_yaml_version_converter" ],

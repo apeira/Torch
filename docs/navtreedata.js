@@ -25,7 +25,6 @@
 var NAVTREE =
 [
   [ "Torch", "index.html", [
-    [ "Plugin Package File Layout", "index.html", null ],
     [ "Packages", "namespaces.html", [
       [ "Packages", "namespaces.html", "namespaces_dup" ],
       [ "Package Functions", "namespacemembers.html", [
@@ -59,7 +58,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_chat_intercept_patch_8cs.html",
-"class_torch_1_1_core_1_1_permissions_1_1_permission_expression.html#a5765ffb8a909f2c9f5c5b2d44dd57339"
+"class_torch_1_1_space_engineers_1_1_space_dedi_core.html#a37f33e0b8c74559b4d26ef503b199db6"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

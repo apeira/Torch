@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['modifier_422',['Modifier',['../class_torch_1_1_core_1_1_permissions_1_1_permission_expression.html#a875788ab599f3e6a8add9e2c97104843',1,'Torch::Core::Permissions::PermissionExpression']]]
+  ['logging_444',['Logging',['../class_torch_1_1_core_1_1_torch_environment.html#af63415e40c2d5e4d788c7a429c8cd77f',1,'Torch::Core::TorchEnvironment']]],
+  ['logtojson_445',['LogToJson',['../class_torch_1_1_core_1_1_torch_configuration.html#af1c999acee9ef9580129514a4b49f482',1,'Torch::Core::TorchConfiguration']]]
 ];

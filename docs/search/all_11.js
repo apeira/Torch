@@ -1,28 +1,5 @@
 var searchData=
 [
-  ['chat_177',['Chat',['../namespace_torch_1_1_space_engineers_1_1_chat.html',1,'Torch::SpaceEngineers']]],
-  ['commands_178',['Commands',['../namespace_torch_1_1_core_1_1_commands.html',1,'Torch.Core.Commands'],['../namespace_torch_1_1_core_1_1_tests_1_1_commands.html',1,'Torch.Core.Tests.Commands']]],
-  ['core_179',['Core',['../namespace_torch_1_1_core.html',1,'Torch']]],
-  ['patches_180',['Patches',['../namespace_torch_1_1_space_engineers_1_1_patches.html',1,'Torch::SpaceEngineers']]],
-  ['permissions_181',['Permissions',['../namespace_torch_1_1_core_1_1_permissions.html',1,'Torch.Core.Permissions'],['../namespace_torch_1_1_core_1_1_tests_1_1_permissions.html',1,'Torch.Core.Tests.Permissions']]],
-  ['players_182',['Players',['../namespace_torch_1_1_space_engineers_1_1_players.html',1,'Torch::SpaceEngineers']]],
-  ['plugins_183',['Plugins',['../namespace_torch_1_1_core_1_1_plugins.html',1,'Torch::Core']]],
-  ['reflection_184',['Reflection',['../namespace_torch_1_1_core_1_1_reflection.html',1,'Torch::Core']]],
-  ['spaceengineers_185',['SpaceEngineers',['../namespace_torch_1_1_space_engineers.html',1,'Torch']]],
-  ['testcore_186',['TestCore',['../class_test_plugin_1_1_test_core.html',1,'TestPlugin']]],
-  ['testcore_2ecs_187',['TestCore.cs',['../_test_core_8cs.html',1,'']]],
-  ['testplugin_188',['TestPlugin',['../namespace_test_plugin.html',1,'TestPlugin'],['../class_test_plugin_1_1_test_plugin.html#aacfef63a53195a48cadb5a18a45f6f50',1,'TestPlugin.TestPlugin.TestPlugin()'],['../class_test_plugin_1_1_test_plugin.html',1,'TestPlugin.TestPlugin']]],
-  ['testplugin_2eassemblyinfo_2ecs_189',['TestPlugin.AssemblyInfo.cs',['../_test_plugin_8_assembly_info_8cs.html',1,'']]],
-  ['testplugin_2ecs_190',['TestPlugin.cs',['../_test_plugin_8cs.html',1,'']]],
-  ['tests_191',['Tests',['../namespace_torch_1_1_core_1_1_tests.html',1,'Torch::Core']]],
-  ['torch_192',['Torch',['../namespace_torch.html',1,'']]],
-  ['torch_2eassemblyinfo_2ecs_193',['Torch.AssemblyInfo.cs',['../_torch_8_assembly_info_8cs.html',1,'']]],
-  ['torch_2ecore_2eassemblyinfo_2ecs_194',['Torch.Core.AssemblyInfo.cs',['../_torch_8_core_8_assembly_info_8cs.html',1,'']]],
-  ['torch_2ecore_2etests_2eassemblyinfo_2ecs_195',['Torch.Core.Tests.AssemblyInfo.cs',['../_debug_2net48_2_torch_8_core_8_tests_8_assembly_info_8cs.html',1,'(Global Namespace)'],['../_debug_2netcoreapp3_81_2_torch_8_core_8_tests_8_assembly_info_8cs.html',1,'(Global Namespace)'],['../_release_2netcoreapp3_81_2_torch_8_core_8_tests_8_assembly_info_8cs.html',1,'(Global Namespace)']]],
-  ['torch_2espaceengineers_2eassemblyinfo_2ecs_196',['Torch.SpaceEngineers.AssemblyInfo.cs',['../_torch_8_space_engineers_8_assembly_info_8cs.html',1,'']]],
-  ['torchconfiguration_197',['TorchConfiguration',['../class_torch_1_1_core_1_1_torch_configuration.html',1,'Torch::Core']]],
-  ['torchconfiguration_2ecs_198',['TorchConfiguration.cs',['../_torch_configuration_8cs.html',1,'']]],
-  ['torchenvironment_199',['TorchEnvironment',['../class_torch_1_1_core_1_1_torch_environment.html',1,'Torch.Core.TorchEnvironment'],['../class_torch_1_1_core_1_1_torch_environment.html#afc6e4448aa367cdaf453397250274599',1,'Torch.Core.TorchEnvironment.TorchEnvironment()']]],
-  ['torchenvironment_2ecs_200',['TorchEnvironment.cs',['../_torch_environment_8cs.html',1,'']]],
-  ['tostring_201',['ToString',['../class_torch_1_1_core_1_1_permissions_1_1_permission_expression.html#a5765ffb8a909f2c9f5c5b2d44dd57339',1,'Torch::Core::Permissions::PermissionExpression']]]
+  ['userdata_212',['UserData',['../class_torch_1_1_options.html#a2eacd9a03e1cd8bac77a94c87ba006d7',1,'Torch::Options']]],
+  ['userdatapath_213',['UserDataPath',['../class_torch_1_1_core_1_1_torch_environment.html#ac0508f0f31ddbfcfd47d90bb6dde9ce9',1,'Torch::Core::TorchEnvironment']]]
 ];

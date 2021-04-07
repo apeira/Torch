@@ -21,7 +21,7 @@
 <!-- Node0 -->
 <g id="node2" class="node">
 <title>Node0</title>
-<g id="a_node2"><a xlink:href="class_torch_1_1_core_1_1_plugins_1_1_plugin_load_exception.html" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="class_torch_1_1_core_1_1_plugins_1_1_plugin_load_exception.html" target="_top" xlink:title="An exception thrown when a plugin fails to load.">
 <polygon fill="white" stroke="black" points="96,-0.5 96,-30.5 225,-30.5 225,-0.5 96,-0.5"/>
 <text text-anchor="start" x="104" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">Torch.Core.Plugins.Plugin</text>
 <text text-anchor="middle" x="160.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">LoadException</text>

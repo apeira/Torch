@@ -1,5 +1,6 @@
 var dir_84ab2964bbe87c1fa7b1b967aff181fd =
 [
+    [ "Common", "dir_02b941de9f05fdef9e65a3710cc7a1a9.html", "dir_02b941de9f05fdef9e65a3710cc7a1a9" ],
     [ "CommandCanExecuteDel.cs", "_command_can_execute_del_8cs.html", "_command_can_execute_del_8cs" ],
     [ "CommandExecuteDel.cs", "_command_execute_del_8cs.html", "_command_execute_del_8cs" ],
     [ "CommandProcessorDel.cs", "_command_processor_del_8cs.html", "_command_processor_del_8cs" ],
@@ -30,8 +31,5 @@ var dir_84ab2964bbe87c1fa7b1b967aff181fd =
     [ "NextProcessorDel.cs", "_next_processor_del_8cs.html", "_next_processor_del_8cs" ],
     [ "NotifyingTextWriter.cs", "_notifying_text_writer_8cs.html", [
       [ "NotifyingTextWriter", "class_torch_1_1_core_1_1_commands_1_1_notifying_text_writer.html", "class_torch_1_1_core_1_1_commands_1_1_notifying_text_writer" ]
-    ] ],
-    [ "StopCommand.cs", "_stop_command_8cs.html", [
-      [ "StopCommand", "class_torch_1_1_core_1_1_commands_1_1_stop_command.html", "class_torch_1_1_core_1_1_commands_1_1_stop_command" ]
     ] ]
 ];

@@ -1,4 +1,4 @@
 <map id="Torch.Core.Plugins.IPluginService" name="Torch.Core.Plugins.IPluginService">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,180,47"/>
+<area shape="rect" id="node1" title="Handles configuring and loading Torch plugins." alt="" coords="5,5,180,47"/>
 <area shape="rect" id="node2" href="$class_torch_1_1_core_1_1_plugins_1_1_plugin_service.html" title=" " alt="" coords="7,95,179,136"/>
 </map>

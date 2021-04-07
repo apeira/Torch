@@ -7,6 +7,10 @@ var annotated_dup =
     [ "Torch", "namespace_torch.html", [
       [ "Core", "namespace_torch_1_1_core.html", [
         [ "Commands", "namespace_torch_1_1_core_1_1_commands.html", [
+          [ "Common", "namespace_torch_1_1_core_1_1_commands_1_1_common.html", [
+            [ "PluginsCommand", "class_torch_1_1_core_1_1_commands_1_1_common_1_1_plugins_command.html", "class_torch_1_1_core_1_1_commands_1_1_common_1_1_plugins_command" ],
+            [ "StopCommand", "class_torch_1_1_core_1_1_commands_1_1_common_1_1_stop_command.html", "class_torch_1_1_core_1_1_commands_1_1_common_1_1_stop_command" ]
+          ] ],
           [ "CommandService", "class_torch_1_1_core_1_1_commands_1_1_command_service.html", "class_torch_1_1_core_1_1_commands_1_1_command_service" ],
           [ "ConsoleService", "class_torch_1_1_core_1_1_commands_1_1_console_service.html", "class_torch_1_1_core_1_1_commands_1_1_console_service" ],
           [ "DelegateCommand", "class_torch_1_1_core_1_1_commands_1_1_delegate_command.html", "class_torch_1_1_core_1_1_commands_1_1_delegate_command" ],
@@ -15,8 +19,7 @@ var annotated_dup =
           [ "ICommandContext", "interface_torch_1_1_core_1_1_commands_1_1_i_command_context.html", "interface_torch_1_1_core_1_1_commands_1_1_i_command_context" ],
           [ "ICommandService", "interface_torch_1_1_core_1_1_commands_1_1_i_command_service.html", "interface_torch_1_1_core_1_1_commands_1_1_i_command_service" ],
           [ "IProcessorStep", "interface_torch_1_1_core_1_1_commands_1_1_i_processor_step.html", "interface_torch_1_1_core_1_1_commands_1_1_i_processor_step" ],
-          [ "NotifyingTextWriter", "class_torch_1_1_core_1_1_commands_1_1_notifying_text_writer.html", "class_torch_1_1_core_1_1_commands_1_1_notifying_text_writer" ],
-          [ "StopCommand", "class_torch_1_1_core_1_1_commands_1_1_stop_command.html", "class_torch_1_1_core_1_1_commands_1_1_stop_command" ]
+          [ "NotifyingTextWriter", "class_torch_1_1_core_1_1_commands_1_1_notifying_text_writer.html", "class_torch_1_1_core_1_1_commands_1_1_notifying_text_writer" ]
         ] ],
         [ "Permissions", "namespace_torch_1_1_core_1_1_permissions.html", [
           [ "IPermissionCollection", "interface_torch_1_1_core_1_1_permissions_1_1_i_permission_collection.html", "interface_torch_1_1_core_1_1_permissions_1_1_i_permission_collection" ],
@@ -28,8 +31,8 @@ var annotated_dup =
         ] ],
         [ "Plugins", "namespace_torch_1_1_core_1_1_plugins.html", [
           [ "Plugin", "class_torch_1_1_core_1_1_plugins_1_1_plugin.html", "class_torch_1_1_core_1_1_plugins_1_1_plugin" ],
-          [ "PluginInfo", "class_torch_1_1_core_1_1_plugins_1_1_plugin_info.html", "class_torch_1_1_core_1_1_plugins_1_1_plugin_info" ],
           [ "IPluginService", "interface_torch_1_1_core_1_1_plugins_1_1_i_plugin_service.html", "interface_torch_1_1_core_1_1_plugins_1_1_i_plugin_service" ],
+          [ "PluginInfo", "class_torch_1_1_core_1_1_plugins_1_1_plugin_info.html", "class_torch_1_1_core_1_1_plugins_1_1_plugin_info" ],
           [ "PluginLoadException", "class_torch_1_1_core_1_1_plugins_1_1_plugin_load_exception.html", "class_torch_1_1_core_1_1_plugins_1_1_plugin_load_exception" ],
           [ "PluginService", "class_torch_1_1_core_1_1_plugins_1_1_plugin_service.html", "class_torch_1_1_core_1_1_plugins_1_1_plugin_service" ]
         ] ],
@@ -47,7 +50,6 @@ var annotated_dup =
         ] ],
         [ "IPlayer", "interface_torch_1_1_core_1_1_i_player.html", "interface_torch_1_1_core_1_1_i_player" ],
         [ "ITorchCore", "interface_torch_1_1_core_1_1_i_torch_core.html", "interface_torch_1_1_core_1_1_i_torch_core" ],
-        [ "PluginsCommand", "class_torch_1_1_core_1_1_plugins_command.html", "class_torch_1_1_core_1_1_plugins_command" ],
         [ "TorchConfiguration", "class_torch_1_1_core_1_1_torch_configuration.html", "class_torch_1_1_core_1_1_torch_configuration" ],
         [ "TorchEnvironment", "class_torch_1_1_core_1_1_torch_environment.html", "class_torch_1_1_core_1_1_torch_environment" ],
         [ "YamlVersionConverter", "class_torch_1_1_core_1_1_yaml_version_converter.html", "class_torch_1_1_core_1_1_yaml_version_converter" ]
@@ -60,8 +62,16 @@ var annotated_dup =
           [ "Player", "class_torch_1_1_space_engineers_1_1_players_1_1_player.html", "class_torch_1_1_space_engineers_1_1_players_1_1_player" ]
         ] ],
         [ "ChatMessageEvent", "struct_torch_1_1_space_engineers_1_1_chat_message_event.html", "struct_torch_1_1_space_engineers_1_1_chat_message_event" ],
-        [ "SEDediCore", "class_torch_1_1_space_engineers_1_1_s_e_dedi_core.html", "class_torch_1_1_space_engineers_1_1_s_e_dedi_core" ],
-        [ "SEDediPlugin", "class_torch_1_1_space_engineers_1_1_s_e_dedi_plugin.html", null ]
-      ] ]
+        [ "SpaceDediCore", "class_torch_1_1_space_engineers_1_1_space_dedi_core.html", "class_torch_1_1_space_engineers_1_1_space_dedi_core" ],
+        [ "SpaceDediPlugin", "class_torch_1_1_space_engineers_1_1_space_dedi_plugin.html", "class_torch_1_1_space_engineers_1_1_space_dedi_plugin" ]
+      ] ],
+      [ "Options", "class_torch_1_1_options.html", "class_torch_1_1_options" ]
+    ] ],
+    [ "TorchSetup", "namespace_torch_setup.html", [
+      [ "InstallStrategies", "namespace_torch_setup_1_1_install_strategies.html", [
+        [ "ExistingSedsInstaller", "class_torch_setup_1_1_install_strategies_1_1_existing_seds_installer.html", "class_torch_setup_1_1_install_strategies_1_1_existing_seds_installer" ],
+        [ "IInstallStrategy", "interface_torch_setup_1_1_install_strategies_1_1_i_install_strategy.html", "interface_torch_setup_1_1_install_strategies_1_1_i_install_strategy" ]
+      ] ],
+      [ "Options", "class_torch_setup_1_1_options.html", null ]
     ] ]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['readme_2emd_301',['README.md',['../_plugins_2_r_e_a_d_m_e_8md.html',1,'(Global Namespace)'],['../_r_e_a_d_m_e_8md.html',1,'(Global Namespace)']]]
+  ['options_2ecs_312',['Options.cs',['../_torch_2_options_8cs.html',1,'(Global Namespace)'],['../_torch_setup_2_options_8cs.html',1,'(Global Namespace)']]]
 ];

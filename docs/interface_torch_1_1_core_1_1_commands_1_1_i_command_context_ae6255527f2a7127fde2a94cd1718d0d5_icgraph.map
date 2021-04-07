@@ -1,5 +1,5 @@
 <map id="Torch.Core.Commands.ICommandContext.Respond" name="Torch.Core.Commands.ICommandContext.Respond">
-<area shape="rect" id="node1" title=" " alt="" coords="248,39,469,80"/>
-<area shape="rect" id="node2" href="$class_torch_1_1_core_1_1_commands_1_1_stop_command.html#aa737152df33f6bfbef7933394dce0ce8" title="Executes the command with the given command context. This should only be called if CanExecute returns..." alt="" coords="9,5,196,47"/>
-<area shape="rect" id="node3" href="$class_torch_1_1_core_1_1_plugins_command.html#a5801d96e77cbc0a3d5a3a7a1e20c8f60" title="Executes the command with the given command context. This should only be called if CanExecute returns..." alt="" coords="5,71,200,112"/>
+<area shape="rect" id="node1" title=" " alt="" coords="268,39,489,80"/>
+<area shape="rect" id="node2" href="$class_torch_1_1_core_1_1_commands_1_1_common_1_1_plugins_command.html#acf142686b5f58ed915d35b2d315a2c75" title="Executes the command with the given command context. This should only be called if CanExecute returns..." alt="" coords="5,5,220,47"/>
+<area shape="rect" id="node3" href="$class_torch_1_1_core_1_1_commands_1_1_common_1_1_stop_command.html#a8928726b8228469bd952cdb9b3c9aa06" title="Executes the command with the given command context. This should only be called if CanExecute returns..." alt="" coords="5,71,220,112"/>
 </map>

@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['section_428',['Section',['../interface_torch_1_1_core_1_1_permissions_1_1_i_permission_collection.html#a6b9a40c987878d38b87e89773f4a4eb6',1,'Torch.Core.Permissions.IPermissionCollection.Section()'],['../class_torch_1_1_core_1_1_permissions_1_1_permission_collection.html#aee7a507ca8781b6e266856a287bff4a3',1,'Torch.Core.Permissions.PermissionCollection.Section()']]],
-  ['sender_429',['Sender',['../interface_torch_1_1_core_1_1_commands_1_1_i_command_context.html#aff554456d63a3aae16b9ec88c4b0bf60',1,'Torch::Core::Commands::ICommandContext']]],
-  ['services_430',['Services',['../class_torch_1_1_core_1_1_torch_environment.html#ab0cbfb3402e80e8e8a3c371a3f4d8784',1,'Torch::Core::TorchEnvironment']]],
-  ['state_431',['State',['../class_test_plugin_1_1_test_core.html#a6540c1849571fec381a8133f493ac021',1,'TestPlugin.TestCore.State()'],['../interface_torch_1_1_core_1_1_i_torch_core.html#a2bc3f0fc3150c512a5782440950abfee',1,'Torch.Core.ITorchCore.State()'],['../class_torch_1_1_space_engineers_1_1_s_e_dedi_core.html#a9b24d8d71104bff60233e62bf3a752cb',1,'Torch.SpaceEngineers.SEDediCore.State()']]],
-  ['steamid_432',['SteamId',['../class_torch_1_1_space_engineers_1_1_players_1_1_player.html#a998324127ed50887dff918399c9f0626',1,'Torch::SpaceEngineers::Players::Player']]]
+  ['patchers_451',['Patchers',['../class_torch_1_1_core_1_1_plugins_1_1_plugin_service.html#af180096d515f0ea14a469bc4192404f3',1,'Torch::Core::Plugins::PluginService']]],
+  ['plugindlls_452',['PluginDlls',['../class_torch_1_1_options.html#a0045a7b2838a8243446afe1b35ea1dfd',1,'Torch::Options']]],
+  ['plugins_453',['Plugins',['../interface_torch_1_1_core_1_1_plugins_1_1_i_plugin_service.html#aad64f594f74972f188e07cd7e7ad2acc',1,'Torch.Core.Plugins.IPluginService.Plugins()'],['../class_torch_1_1_core_1_1_plugins_1_1_plugin_service.html#a6216ba41a4bf709dcc4935ec2ae0f6d2',1,'Torch.Core.Plugins.PluginService.Plugins()'],['../class_torch_1_1_core_1_1_torch_configuration.html#a570e943e0fe5eb057c59d7590b13aa7a',1,'Torch.Core.TorchConfiguration.Plugins()']]]
 ];

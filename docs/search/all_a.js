@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['loadplugindebug_102',['LoadPluginDebug',['../class_torch_1_1_core_1_1_plugins_1_1_plugin_service.html#ab0c3987a6af1b7cc8c8bedd367c6c894',1,'Torch::Core::Plugins::PluginService']]],
-  ['loadplugins_103',['LoadPlugins',['../class_torch_1_1_core_1_1_plugins_1_1_plugin_service.html#a472aa07f9fd285f06501306d78484030',1,'Torch::Core::Plugins::PluginService']]],
-  ['logging_104',['Logging',['../class_torch_1_1_core_1_1_torch_environment.html#af63415e40c2d5e4d788c7a429c8cd77f',1,'Torch::Core::TorchEnvironment']]],
-  ['logtojson_105',['LogToJson',['../class_torch_1_1_core_1_1_torch_configuration.html#af1c999acee9ef9580129514a4b49f482',1,'Torch::Core::TorchConfiguration']]]
+  ['methodproxy_113',['MethodProxy',['../class_torch_1_1_core_1_1_reflection_1_1_method_proxy.html',1,'Torch::Core::Reflection']]],
+  ['methodproxy_2ecs_114',['MethodProxy.cs',['../_method_proxy_8cs.html',1,'']]],
+  ['middlewildcard_115',['MiddleWildcard',['../class_torch_1_1_core_1_1_tests_1_1_permissions_1_1_permission_expression_tests.html#a3c3faf92e7fa8db18308f19a197a85ad',1,'Torch::Core::Tests::Permissions::PermissionExpressionTests']]],
+  ['modifier_116',['Modifier',['../class_torch_1_1_core_1_1_permissions_1_1_permission_expression.html#a875788ab599f3e6a8add9e2c97104843',1,'Torch::Core::Permissions::PermissionExpression']]]
 ];

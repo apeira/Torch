@@ -18,5 +18,6 @@ var dir_15f4b978abf14fccd324f5868f0aca04 =
     [ "PermissionModifier.cs", "_permission_modifier_8cs.html", "_permission_modifier_8cs" ],
     [ "PermissionService.cs", "_permission_service_8cs.html", [
       [ "PermissionService", "class_torch_1_1_core_1_1_permissions_1_1_permission_service.html", "class_torch_1_1_core_1_1_permissions_1_1_permission_service" ]
-    ] ]
+    ] ],
+    [ "SerializablePermissionCollection.cs", "_serializable_permission_collection_8cs.html", null ]
 ];

@@ -1,5 +1,5 @@
 <map id="Torch.Core.ITorchCore" name="Torch.Core.ITorchCore">
-<area shape="rect" id="node1" title="Represents an object responsible for controlling the lifetime of the Torch application." alt="" coords="103,5,254,32"/>
-<area shape="rect" id="node2" href="$class_test_plugin_1_1_test_core.html" title=" " alt="" coords="5,80,144,107"/>
-<area shape="rect" id="node3" href="$class_torch_1_1_space_engineers_1_1_s_e_dedi_core.html" title=" " alt="" coords="169,80,397,107"/>
+<area shape="rect" id="node1" title="Represents an object responsible for controlling the lifetime of the Torch application." alt="" coords="94,5,245,32"/>
+<area shape="rect" id="node2" href="$class_test_plugin_1_1_test_core.html" title="Test core implementation." alt="" coords="5,87,144,114"/>
+<area shape="rect" id="node3" href="$class_torch_1_1_space_engineers_1_1_space_dedi_core.html" title="Runs a Space Engineers Dedicated server." alt="" coords="168,80,363,121"/>
 </map>

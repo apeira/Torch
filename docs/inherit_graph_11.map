@@ -1,5 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
 <area shape="rect" id="node1" href="$class_torch_1_1_core_1_1_plugins_1_1_plugin.html" title=" " alt="" coords="5,35,177,61"/>
-<area shape="rect" id="node2" href="$class_test_plugin_1_1_test_plugin.html" title="The entry point of the plugin. Any plugin must define exactly one subtype of Plugin to be valid." alt="" coords="252,5,400,32"/>
-<area shape="rect" id="node3" href="$class_torch_1_1_space_engineers_1_1_s_e_dedi_plugin.html" title=" " alt="" coords="225,57,427,98"/>
+<area shape="rect" id="node2" href="$class_test_plugin_1_1_test_plugin.html" title="The entry point of the plugin. Any plugin must define exactly one subtype of Plugin to be valid." alt="" coords="249,5,397,32"/>
+<area shape="rect" id="node3" href="$class_torch_1_1_space_engineers_1_1_space_dedi_plugin.html" title="Provides a core and supporting services for running a Space Engineers dedicated server under Torch." alt="" coords="225,57,420,98"/>
 </map>

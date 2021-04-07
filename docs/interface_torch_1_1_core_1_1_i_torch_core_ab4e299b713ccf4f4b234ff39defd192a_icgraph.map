@@ -1,4 +1,4 @@
 <map id="Torch.Core.ITorchCore.SignalStop" name="Torch.Core.ITorchCore.SignalStop">
-<area shape="rect" id="node1" title="Signal the core to complete execution and stop." alt="" coords="240,13,459,39"/>
-<area shape="rect" id="node2" href="$class_torch_1_1_core_1_1_commands_1_1_stop_command.html#aa737152df33f6bfbef7933394dce0ce8" title="Executes the command with the given command context. This should only be called if CanExecute returns..." alt="" coords="5,5,192,47"/>
+<area shape="rect" id="node1" title="Signal the core to complete execution and stop." alt="" coords="268,13,487,39"/>
+<area shape="rect" id="node2" href="$class_torch_1_1_core_1_1_commands_1_1_common_1_1_stop_command.html#a8928726b8228469bd952cdb9b3c9aa06" title="Executes the command with the given command context. This should only be called if CanExecute returns..." alt="" coords="5,5,220,47"/>
 </map>
