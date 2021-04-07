@@ -66,7 +66,7 @@ namespace TorchSetup.Plugins
         public IEnumerable<string>? ConflictsSerializable
         {
             get => Conflicts?.Select(x => $"{x.Id} {x.Range}");
-            set => SetRequires(value);
+            set => SetConflicts(value);
         }
 
         [YamlMember(Alias = "load-after", DefaultValuesHandling = DefaultValuesHandling.OmitNull)]
@@ -78,16 +78,12 @@ namespace TorchSetup.Plugins
             _id = id;
         }
 
-        private void SetRequires(IEnumerable<string>? requires)
+        private IEnumerable<(string Id, Range Range)> Parse(IEnumerable<string>? collection)
         {
-            if (requires == null)
-            {
-                Requires = null;
-                return;
-            }
+            if (collection is null)
+                yield break;
 
-            Requires = new List<(string Id, Range Range)>();
-            foreach (var str in requires)
+            foreach (var str in collection)
             {
                 var delimIndex = str.IndexOf(' ');
 
@@ -96,13 +92,35 @@ namespace TorchSetup.Plugins
                     var id = str.Substring(0, delimIndex);
                     var range = str.Substring(delimIndex + 1);
                     ValidateId(id);
-                    Requires.Add((id, new Range(range)));
+                    yield return (id, new Range(range));
                 }
                 else
                 {
-                    Requires.Add((str, new Range("*")));
+                    yield return (str, new Range("*"));
                 }
             }
+        }
+
+        private void SetConflicts(IEnumerable<string>? conflicts)
+        {
+            if (conflicts is null)
+            {
+                Conflicts = null;
+                return;
+            }
+
+            Conflicts = Parse(conflicts).ToList();
+        }
+
+        private void SetRequires(IEnumerable<string>? requires)
+        {
+            if (requires == null)
+            {
+                Requires = null;
+                return;
+            }
+
+            Requires = Parse(requires).ToList();
         }
 
         private void ValidateId(string id)

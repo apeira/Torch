@@ -52,7 +52,7 @@ namespace TorchSetup
                 {
                     Id = "test-plugin",
                     Version = new Version(1, i, 0),
-                    RequiresSerializable = new [] { "other-plugin 1.0.0" },
+                    ConflictsSerializable = new [] { "other-plugin" },
                 });
                 man.AddSpec(new PluginSpecification
                 {
@@ -62,7 +62,7 @@ namespace TorchSetup
             }
 
             man.ExplicitlyInstalled["test-plugin"] = new Range("*");
-            man.ExplicitlyInstalled["other-plugin"] = new Range("2.0.0");
+            man.ExplicitlyInstalled["other-plugin"] = new Range("1.0.0");
 
             man.SolveDependencies();
         }
