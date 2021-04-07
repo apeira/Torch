@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using CommandLine;
+using SemVer;
 using TorchSetup.InstallStrategies;
 using TorchSetup.Options;
 using TorchSetup.Plugins;
@@ -44,40 +45,17 @@ namespace TorchSetup
 
         private static void TestDeps()
         {
-            var spec1 = new PluginSpecification
+            var man = new PluginManager();
+            for (var i = 0; i < 10; i++)
             {
-                Id = "test-plugin",
-                Version = Version.Parse("1.2.3"),
-            };
-            var spec2 = new PluginSpecification
-            {
-                Id = "test-plugin",
-                Version = Version.Parse("1.2.4"),
-            };
-            var spec3 = new PluginSpecification
-            {
-                Id = "test-plugin",
-                Version = Version.Parse("1.2.5"),
-            };
-            var spec4 = new PluginSpecification
-            {
-                Id = "test-plugin",
-                Version = Version.Parse("1.2.6"),
-            };
-            var spec5 = new PluginSpecification
-            {
-                Id = "other-plugin",
-                Version = Version.Parse("1.0.0"),
-            };
+                man.AddSpec(new PluginSpecification{Id = "test-plugin", Version = new Version(1, i, 0)});
+                man.AddSpec(new PluginSpecification{Id = "other-plugin", Version = new Version(i, 0, 0)});
+            }
 
-            var solver = new DependencySolver();
-            solver.AddExclusiveConstraint(spec1, spec2, spec3, spec4);
-            solver.AddRequirementConstraint(spec1, spec5);
-            solver.AddSingleConstraint(spec1);
-            solver.FindSolutions();
-            Console.WriteLine("SOLUTIONS:");
-            foreach (var solution in solver.Solutions)
-                Console.WriteLine(string.Join(", ", solution.Select(x => x ? 'T' : 'F')));
+            man.ExplicitlyInstalled["test-plugin"] = new Range("*");
+            man.ExplicitlyInstalled["other-plugin"] = new Range("*");
+
+            man.SolveDependencies();
         }
     }
 }

@@ -31,4 +31,10 @@
       </None>
     </ItemGroup>
 
+    <ItemGroup>
+      <Reference Include="Csp, Version=0.4.2.0, Culture=neutral, PublicKeyToken=null">
+        <HintPath>..\..\..\..\Decider\Csp\bin\Debug\netstandard2.0\Csp.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
 </Project>
