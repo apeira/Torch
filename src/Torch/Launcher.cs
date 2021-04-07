@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 
 namespace Torch
@@ -25,7 +25,7 @@ namespace Torch
             var assemblyDir = new FileInfo(typeof(Launcher).Assembly.Location).DirectoryName!;
 
             var options = File.ReadAllText(Path.Combine(assemblyDir, "domain"))
-                .Split(new[] { "\n" }, StringSplitOptions.RemoveEmptyEntries);
+                .Split(new[] { "\n", Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
 
             var basePath = Path.Combine(assemblyDir, options[0]);
             var setup = new AppDomainSetup();

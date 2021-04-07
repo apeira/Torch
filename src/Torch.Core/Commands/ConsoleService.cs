@@ -46,6 +46,9 @@ namespace Torch.Core.Commands
 
         private void StartListener()
         {
+
+            
+
             _consoleWritePosition = (Console.CursorLeft, Console.CursorTop);
             _stdOut = new StreamWriter(Console.OpenStandardOutput()){AutoFlush = true};
             var notifyingOut = new NotifyingTextWriter(_stdOut);
@@ -130,17 +133,21 @@ namespace Torch.Core.Commands
 
         private void HandleBeforeWrite()
         {
+            Console.CursorVisible = false;
             ClearUserInput();
             Console.SetCursorPosition(_consoleWritePosition.Left, _consoleWritePosition.Top);
+            Console.CursorVisible = true;
         }
 
         private void RewriteUserInput()
         {
+            Console.CursorVisible = false;
             ClearUserInput();
             var (left, top) = GetUserCursor();
             Console.SetCursorPosition(0, top);
             _stdOut!.Write($"> {_currentUserInput}");
             Console.SetCursorPosition(left, top);
+            Console.CursorVisible = true;
         }
 
         private void ClearUserInput()
