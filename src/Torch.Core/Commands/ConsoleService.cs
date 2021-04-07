@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -60,14 +61,13 @@ namespace Torch.Core.Commands
             Console.SetOut(notifyingOut);
             notifyingOut.BeforeWrite += HandleBeforeWrite;
             notifyingOut.AfterWrite += HandleAfterWrite;
-
+            EnableAnsiEscape();
             RewriteUserInput();
             Task.Run(() => Listener(), _cancelTokenSource.Token);
         }
 
         private void Listener()
         {
-
             while (!_cancelTokenSource.Token.IsCancellationRequested)
             {
                 try
@@ -222,6 +222,31 @@ namespace Torch.Core.Commands
             var textBottom = _consoleWritePosition.Top + 1;
 
             return (_inputCursor + 2, Math.Max(windowBottom, textBottom));
+        }
+
+        // https://docs.microsoft.com/en-us/windows/console/setconsolemode
+        private void EnableAnsiEscape()
+        {
+            var stdOut = NativeMethods.GetStdHandle(-11);
+            if (stdOut == IntPtr.Zero)
+                throw new InvalidOperationException("stdOut == NULL");
+
+            // ENABLE_VIRTUAL_TERMINAL_PROCESSING = 0x0004
+            NativeMethods.GetConsoleMode(stdOut, out var mode);
+            mode |= 0x4;
+            NativeMethods.SetConsoleMode(stdOut, mode);
+        }
+
+        private class NativeMethods
+        {
+            [DllImport("kernel32")]
+            public static extern bool SetConsoleMode(IntPtr handle, uint mode);
+
+            [DllImport("kernel32")]
+            public static extern bool GetConsoleMode(IntPtr handle, out uint mode);
+
+            [DllImport("kernel32")]
+            public static extern IntPtr GetStdHandle(int stdHandle);
         }
     }
 }
