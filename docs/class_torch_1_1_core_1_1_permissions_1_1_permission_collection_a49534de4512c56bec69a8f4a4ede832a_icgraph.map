@@ -1,0 +1,4 @@
+<map id="Torch.Core.Permissions.PermissionCollection.WouldCauseCircularInheritance" name="Torch.Core.Permissions.PermissionCollection.WouldCauseCircularInheritance">
+<area shape="rect" id="node1" title="Returns true if inheriting the given collection would cause a circular inheritance graph." alt="" coords="284,5,548,47"/>
+<area shape="rect" id="node2" href="$class_torch_1_1_core_1_1_permissions_1_1_permission_collection.html#a3caa8edc4f8497be954ace3e23b5617a" title=" " alt="" coords="5,5,236,47"/>
+</map>

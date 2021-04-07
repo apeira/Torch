@@ -1,0 +1,4 @@
+<map id="Torch.SpaceEngineers.SpaceDediCore" name="Torch.SpaceEngineers.SpaceDediCore">
+<area shape="rect" id="node1" title="Runs a Space Engineers Dedicated server." alt="" coords="5,80,200,121"/>
+<area shape="rect" id="node2" href="$interface_torch_1_1_core_1_1_i_torch_core.html" title="Represents an object responsible for controlling the lifetime of the Torch application." alt="" coords="61,5,145,32"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Torch.Core.Commands.Common.StopCommand.Execute" name="Torch.Core.Commands.Common.StopCommand.Execute">
+<area shape="rect" id="node1" title="Executes the command with the given command context. This should only be called if CanExecute returns..." alt="" coords="5,35,220,76"/>
+<area shape="rect" id="node2" href="$interface_torch_1_1_core_1_1_commands_1_1_i_command_context.html#ae6255527f2a7127fde2a94cd1718d0d5" title=" " alt="" coords="268,5,489,47"/>
+<area shape="rect" id="node3" href="$interface_torch_1_1_core_1_1_i_torch_core.html#ab4e299b713ccf4f4b234ff39defd192a" title="Signal the core to complete execution and stop." alt="" coords="269,71,488,98"/>
+</map>
