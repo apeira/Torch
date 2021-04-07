@@ -8,3 +8,7 @@ entryPoint: MyPlugin.dll
 requires:
   - some-other-plugin
   - another-plugin >=1.0.0
+conflicts:
+  - a-conflicting-plugin
+load-after:
+  - a-soft-dependency

@@ -59,6 +59,19 @@ namespace TorchSetup.Plugins
             set => SetRequires(value);
         }
 
+        [YamlIgnore]
+        public List<(string Id, Range Range)>? Conflicts { get; set; }
+
+        [YamlMember(Alias = "conflicts", DefaultValuesHandling = DefaultValuesHandling.OmitNull)]
+        public IEnumerable<string>? ConflictsSerializable
+        {
+            get => Conflicts?.Select(x => $"{x.Id} {x.Range}");
+            set => SetRequires(value);
+        }
+
+        [YamlMember(Alias = "load-after", DefaultValuesHandling = DefaultValuesHandling.OmitNull)]
+        public List<string>? LoadAfter { get; set; }
+
         private void SetId(string id)
         {
             ValidateId(id);

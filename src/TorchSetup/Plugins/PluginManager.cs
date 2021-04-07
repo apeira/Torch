@@ -112,6 +112,20 @@ namespace TorchSetup.Plugins
                 }
             }
 
+            // A plugin cannot be installed alongside a conflicting plugin.
+            foreach (var pluginVer in _plugins.SelectMany(x => x.Value))
+            {
+                if (pluginVer.Conflicts is not null)
+                {
+                    foreach (var conflict in pluginVer.Conflicts)
+                    {
+                        var conflictingVersions = _plugins[conflict.Id].Where(x => conflict.Range.IsSatisfied(x.Version));
+                        var numConflictingInstalled = conflictingVersions.Select(VariableFor).Aggregate((x, y) => x + y);
+                        _constraints.Add(new ConstraintInteger(VariableFor(pluginVer) * numConflictingInstalled == 0));
+                    }
+                }
+            }
+
             // A satisfying version of explicitly installed plugins must be installed.
             foreach (var req in ExplicitlyInstalled)
             {
