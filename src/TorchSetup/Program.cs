@@ -48,12 +48,21 @@ namespace TorchSetup
             var man = new PluginManager();
             for (var i = 0; i < 10; i++)
             {
-                man.AddSpec(new PluginSpecification{Id = "test-plugin", Version = new Version(1, i, 0)});
-                man.AddSpec(new PluginSpecification{Id = "other-plugin", Version = new Version(i, 0, 0)});
+                man.AddSpec(new PluginSpecification
+                {
+                    Id = "test-plugin",
+                    Version = new Version(1, i, 0),
+                    RequiresSerializable = new [] { "other-plugin 1.0.0" },
+                });
+                man.AddSpec(new PluginSpecification
+                {
+                    Id = "other-plugin",
+                    Version = new Version(i, 0, 0),
+                });
             }
 
             man.ExplicitlyInstalled["test-plugin"] = new Range("*");
-            man.ExplicitlyInstalled["other-plugin"] = new Range("*");
+            man.ExplicitlyInstalled["other-plugin"] = new Range("2.0.0");
 
             man.SolveDependencies();
         }
