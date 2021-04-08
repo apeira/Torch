@@ -5,7 +5,7 @@
         <IsPackable>false</IsPackable>
         <Configurations>Release;Debug</Configurations>
         <Platforms>x64</Platforms>
-        <LangVersion>default</LangVersion>
+        <LangVersion>9</LangVersion>
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
